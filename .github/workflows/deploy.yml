@@ -68,12 +68,11 @@ jobs:
       - name: Setup Vercel Config
         run: |
           mkdir -p .vercel
-          cat << 'EOF' > .vercel/project.json
-          {
-            "orgId": "${{ secrets.VERCEL_ORG_ID }}",
-            "projectId": "${{ secrets.VERCEL_PROJECT_ID || 'prj_KrxBDOVxD0dAcbMiTvz71u40kn1B' }}"
-          }
-          EOF
+          if [ -n "${{ secrets.VERCEL_ORG_ID }}" ]; then
+            echo '{"orgId":"${{ secrets.VERCEL_ORG_ID }}","projectId":"${{ secrets.VERCEL_PROJECT_ID || 'prj_KrxBDOVxD0dAcbMiTvz71u40kn1B' }}"}' > .vercel/project.json
+          else
+            echo '{"projectId":"${{ secrets.VERCEL_PROJECT_ID || 'prj_KrxBDOVxD0dAcbMiTvz71u40kn1B' }}"}' > .vercel/project.json
+          fi
 
       - name: Deploy to Vercel
         env:
