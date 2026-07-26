@@ -1,0 +1,31 @@
+version: "3.9"
+
+services:
+  mongo:
+    image: mongo:7.0
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+    environment:
+      MONGO_INITDB_DATABASE: portfolio
+
+  app:
+    build: .
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    env_file: .env
+    depends_on:
+      - mongo
+    command: >
+      sh -c "
+      until mongosh --host mongo --eval 'db.runCommand({ ping: 1 })' >/dev/null 2>&1;
+      do echo 'waiting for MongoDB…'; sleep 2;
+      done;
+      npm run dev
+      "
+
+volumes:
+  mongo-data:

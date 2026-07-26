@@ -6,7 +6,7 @@ require('dotenv').config();
 
 const dbConnect = require('./config/db');
 
-const apiRouter = require('./routes/api');
+const apiRouter = require('./routes/api.js');
 
 const app = express();
 
@@ -22,8 +22,8 @@ app.use(express.static(path.join(__dirname, '..', 'public')));
 // API routes
 app.use('/api', apiRouter);
 
-// Fallback to index.html for SPA routes
-app.get('*', (req, res) => {
+// Fallback to index.html for any SPA route (Express 5 compatible)
+app.get('/*', (req, res) => {
   res.sendFile(path.join(__dirname, '..', 'public', 'index.html'));
 });
 

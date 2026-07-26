@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Admin Dashboard – Portfolio</title>
+  <meta name="description" content="Admin interface to manage projects, skills and contacts for the personal portfolio website." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/admin.css" />
+</head>
+<body>
+  <header class="admin-header">
+    <h1>Portfolio Admin</h1>
+    <button id="logoutBtn" class="btn logout">Log out</button>
+  </header>
+
+  <main class="admin-main">
+    <!-- Nav tabs -->
+    <nav class="admin-nav">
+      <button class="tab active" data-target="projects">Projects</button>
+      <button class="tab" data-target="skills">Skills</button>
+      <button class="tab" data-target="contacts">Contacts</button>
+    </nav>
+
+    <!-- Sections -->
+    <section id="projects" class="panel active">
+      <h2>Projects</h2>
+      <button class="btn add" id="addProjectBtn">Add Project</button>
+      <div id="projectsList" class="list"></div>
+    </section>
+
+    <section id="skills" class="panel">
+      <h2>Skills</h2>
+      <button class="btn add" id="addSkillBtn">Add Skill</button>
+      <div id="skillsList" class="list"></div>
+    </section>
+
+    <section id="contacts" class="panel">
+      <h2>Contact Messages</h2>
+      <div id="contactsList" class="list"></div>
+    </section>
+  </main>
+
+  <!-- Login Modal -->
+  <div id="loginModal" class="modal hidden">
+    <div class="modal-content">
+      <h2>Admin Login</h2>
+      <form id="loginForm">
+        <label>Email<input type="email" name="email" required /></label>
+        <label>Password<input type="password" name="password" required /></label>
+        <button type="submit" class="btn submit">Sign In</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- CRUD Modal (re‑used for Projects & Skills) -->
+  <div id="crudModal" class="modal hidden">
+    <div class="modal-content" id="crudContent"></div>
+  </div>
+
+  <script src="/js/admin.js"></script>
+</body>
+</html>

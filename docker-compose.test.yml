@@ -1,0 +1,38 @@
+version: "3.9"
+
+services:
+  mongo:
+    image: mongo:7.0
+    restart: unless-stopped
+    # No host port exposure – internal only for the test container
+    volumes:
+      - mongo-test-data:/data/db
+    environment:
+      MONGO_INITDB_DATABASE: portfolio_test
+    healthcheck:
+      test: ["CMD", "mongo", "--eval", "db.adminCommand('ping')"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+  test:
+    build: .
+    # Run Jest test suite and exit
+    command: ["npm", "test"]
+    env_file: .env
+    environment:
+      NODE_ENV: test
+      # Connection string used by the test suites (see jest files)
+      TEST_MONGODB_URI: "mongodb://mongo:27017/portfolio_test"
+    depends_on:
+      mongo:
+        condition: service_healthy
+    # Mount the source so that the container sees the latest code
+    volumes:
+      - .:/app
+    working_dir: /app
+    # Use the same node image as the app (Dockerfile) – will reuse build
+    # No ports needed; test runner only communicates with mongo.
+
+volumes:
+  mongo-test-data:
