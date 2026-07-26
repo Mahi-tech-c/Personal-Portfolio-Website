@@ -8,5 +8,8 @@
       "maxDuration": 10
     }
   },
+  "routes": [
+    { "src": "/api/(.*)", "dest": "/api/index.js" }
+  ],
   "projectId": "prj_KrxBDOVxD0dAcbMiTvz71u40kn1B"
 }

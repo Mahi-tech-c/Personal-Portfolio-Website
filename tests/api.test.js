@@ -13,7 +13,7 @@ const Contact = require('../src/models/Contact');
 const TEST_DB_URI = process.env.TEST_MONGODB_URI || 'mongodb://localhost:27017/portfolio_test_api';
 
 beforeAll(async () => {
-  await mongoose.connect(TEST_DB_URI, { useNewUrlParser: true, useUnifiedTopology: true });
+  await mongoose.connect(TEST_DB_URI);
   // Clean collections and insert minimal fixtures
   await Promise.all([
     Project.deleteMany({}),

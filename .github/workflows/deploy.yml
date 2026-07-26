@@ -9,6 +9,18 @@ on:
 jobs:
   build-test:
     runs-on: ubuntu-latest
+    services:
+      mongodb:
+        image: mongo:6
+        ports: ['27017:27017']
+        options: >-
+          --health-cmd "mongosh --eval 'db.runCommand({ ping: 1 })'" 
+          --health-start-period 10s
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 5
+    env:
+      TEST_MONGODB_URI: mongodb://localhost:27017/portfolio_test
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -49,8 +61,8 @@ jobs:
 
       - name: Deploy to Vercel
         env:
-          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_ORG_ID: team_nd2NFlMVxWzXkwixJjEZtxLN
           VERCEL_PROJECT_ID: prj_KrxBDOVxD0dAcbMiTvz71u40kn1B
-          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          VERCEL_TOKEN: vcp_0AWyP6BxLvKeAGBV5oTfbbu7qxMn9FeQuFXyfVcwf30KWMLtpJ2cqJH0
         run: |
           vercel --prod --token $VERCEL_TOKEN --confirm

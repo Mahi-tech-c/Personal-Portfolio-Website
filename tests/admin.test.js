@@ -18,7 +18,7 @@ let adminToken = '';
 
 beforeAll(async () => {
   // Connect to test DB
-  await mongoose.connect(TEST_DB_URI, { useNewUrlParser: true, useUnifiedTopology: true });
+  await mongoose.connect(TEST_DB_URI);
   // Clean collections
   await Promise.all([
     User.deleteMany({}),

@@ -107,6 +107,7 @@ docker compose -f docker-compose.parallel-test.yml up --build --abort-on-contain
 # Reports are available in ./test-reports/
 ```
 You can change the number of runners by editing the file or by setting the environment variable `PARALLEL_WORKERS` (default = 3).
+<!-- Trigger CI after adding secrets -->
 
 ---
 
