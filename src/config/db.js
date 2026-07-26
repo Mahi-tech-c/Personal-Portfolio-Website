@@ -12,8 +12,9 @@ const connectDB = async () => {
     isConnected = true;
     console.log('MongoDB connected (cached)');
   } catch (err) {
-    console.error('MongoDB connection error:', err);
-    throw err;
+    console.error('MongoDB connection error (non-fatal):', err);
+    // Do not rethrow to avoid crashing serverless function
+    // The app can still run, but DB-dependent routes may fail gracefully
   }
 };
 

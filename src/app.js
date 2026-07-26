@@ -23,11 +23,13 @@ app.use(express.static(path.join(__dirname, '..', 'public')));
 app.use('/api', apiRouter);
 
 // Fallback to index.html for any SPA route (Express 5 compatible)
-app.get('/*', (req, res) => {
+app.use((req, res) => {
   res.sendFile(path.join(__dirname, '..', 'public', 'index.html'));
 });
 
-// Connect to DB
-dbConnect();
+// Connect to DB only in non‑test environments
+if (process.env.NODE_ENV !== 'test') {
+  dbConnect();
+}
 
 module.exports = app;
