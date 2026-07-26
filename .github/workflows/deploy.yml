@@ -79,4 +79,8 @@ jobs:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
           VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
           VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID || 'prj_KrxBDOVxD0dAcbMiTvz71u40kn1B' }}
-        run: npx vercel --prod --token="${{ secrets.VERCEL_TOKEN }}" --yes
+        run: |
+          DEPLOYMENT_URL=$(npx vercel --prod --token="${{ secrets.VERCEL_TOKEN }}" --yes)
+          echo "Live Deployment URL: $DEPLOYMENT_URL"
+          echo "### 🚀 Live Vercel Deployment" >> $GITHUB_STEP_SUMMARY
+          echo "Your website is live at: $DEPLOYMENT_URL" >> $GITHUB_STEP_SUMMARY
