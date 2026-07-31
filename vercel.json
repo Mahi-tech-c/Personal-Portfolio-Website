@@ -1,6 +1,5 @@
 {
-  "routes": [
-    { "src": "/api/(.*)", "dest": "/api/[...path].js" },
-    { "src": "/(.*)", "dest": "/$1" }
-  ]
+  "buildCommand": null,
+  "outputDirectory": "client",
+  "framework": null
 }
