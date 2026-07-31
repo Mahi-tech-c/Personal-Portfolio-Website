@@ -142,7 +142,7 @@
                     </div>
                     <div class="stat-item">
                         <div class="stat-icon"><i class="fas fa-star"></i></div>
-                        <h3 class="stat-number" data-target="8.97" data-decimal="true">0</h3>
+                        <h3 class="stat-number" data-target="8.99" data-decimal="true">0</h3>
                         <p class="stat-label">CGPA (B.Tech)</p>
                     </div>
                 </div>
@@ -152,15 +152,22 @@
                         <div class="timeline-item fade-in">
                             <div class="timeline-card">
                                 <h4>B.Tech in Computer Science and Networks</h4>
-                                <p class="timeline-year">Kakatiya Institute of Technology &amp; Science | 2022 - 2026</p>
-                                <p>Currently pursuing B.Tech with a focus on Computer Science and Networks. CGPA: 8.97</p>
+                                <p class="timeline-year">Kakatiya Institute of Technology &amp; Science (KITSW), Warangal | 2024 - 2028</p>
+                                <p>Currently pursuing B.Tech with a focus on Computer Science and Networks. CGPA: 8.99</p>
                             </div>
                         </div>
                         <div class="timeline-item fade-in">
                             <div class="timeline-card">
                                 <h4>Intermediate (MPC)</h4>
-                                <p class="timeline-year">Telangana State Board | 2020 - 2022</p>
-                                <p>Completed intermediate with Mathematics, Physics, and Chemistry. CGPA: 9.5</p>
+                                <p class="timeline-year">Telangana Minority Residential Educational Institution Society, Warangal | 2022 - 2024</p>
+                                <p>Completed intermediate with Mathematics, Physics, and Chemistry. CGPA: 9.2</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item fade-in">
+                            <div class="timeline-card">
+                                <h4>SSC (Secondary School Certificate)</h4>
+                                <p class="timeline-year">Telangana Minority Residential Educational Institution Society, Warangal | 2022</p>
+                                <p>Completed secondary school education. CGPA: 9.7</p>
                             </div>
                         </div>
                     </div>
@@ -193,6 +200,7 @@
                     <button class="filter-btn" data-filter="Web Development">Web</button>
                     <button class="filter-btn" data-filter="Desktop App">Desktop</button>
                     <button class="filter-btn" data-filter="IoT">IoT</button>
+                    <button class="filter-btn" data-filter="Java">Java</button>
                 </div>
                 <div class="projects-search">
                     <input type="text" id="project-search" placeholder="Search projects...">
@@ -320,93 +328,87 @@
     // ============ EMBEDDED DATA ============
     const SKILLS_DATA = [
         { name: 'C', category: 'Programming Languages', proficiency: 85 },
-        { name: 'C++', category: 'Programming Languages', proficiency: 80 },
-        { name: 'Java', category: 'Programming Languages', proficiency: 75 },
-        { name: 'Python', category: 'Programming Languages', proficiency: 70 },
-        { name: 'JavaScript', category: 'Programming Languages', proficiency: 85 },
-        { name: 'HTML5', category: 'Web Development', proficiency: 95 },
-        { name: 'CSS3', category: 'Web Development', proficiency: 90 },
-        { name: 'Node.js', category: 'Web Development', proficiency: 80 },
-        { name: 'Express.js', category: 'Web Development', proficiency: 80 },
-        { name: 'React', category: 'Web Development', proficiency: 70 },
-        { name: 'MongoDB', category: 'Database', proficiency: 75 },
-        { name: 'MySQL', category: 'Database', proficiency: 70 },
-        { name: 'Git', category: 'Tools & Technologies', proficiency: 85 },
-        { name: 'Docker', category: 'Tools & Technologies', proficiency: 60 },
-        { name: 'VS Code', category: 'Tools & Technologies', proficiency: 90 },
-        { name: 'Problem Solving', category: 'Soft Skills', proficiency: 90 },
-        { name: 'Team Collaboration', category: 'Soft Skills', proficiency: 85 },
-        { name: 'Communication', category: 'Soft Skills', proficiency: 80 }
+        { name: 'Java', category: 'Programming Languages', proficiency: 80 },
+        { name: 'Data Structures', category: 'Programming Languages', proficiency: 78 },
+        { name: 'Python (Basics)', category: 'Programming Languages', proficiency: 55 },
+        { name: 'AutoCAD', category: 'Programming Languages', proficiency: 65 },
+        { name: 'Database Management (Basics)', category: 'Database', proficiency: 60 },
+        { name: 'MS Word', category: 'Tools', proficiency: 80 },
+        { name: 'MS Excel (Basics)', category: 'Tools', proficiency: 65 },
+        { name: 'MS PowerPoint', category: 'Tools', proficiency: 75 },
+        { name: 'Problem Solving', category: 'Other Skills', proficiency: 90 },
+        { name: 'Communication Skills', category: 'Other Skills', proficiency: 85 },
+        { name: 'Time Management', category: 'Other Skills', proficiency: 88 }
     ];
 
     const PROJECTS_DATA = [
         {
-            title: 'Personal Portfolio Website',
-            description: 'A modern, responsive full-stack portfolio website built with Node.js, Express, MongoDB, and vanilla JavaScript. Features include admin dashboard, contact form with email notifications, and dynamic content management.',
-            shortDescription: 'Full-stack portfolio with admin dashboard',
+            title: 'AI-Powered Emergency Traffic Control System',
+            description: 'Developed a real-time dashboard for ambulance routing and traffic signal preemption using React, Leaflet, and OSRM API during the IdeaSprint 24-Hours Hackathon. Features live vehicle tracking, optimized route calculation, and automated traffic signal control for emergency vehicles.',
+            shortDescription: 'Real-time ambulance routing & traffic signal preemption dashboard',
             category: 'Web Development',
-            technologies: ['Node.js', 'Express', 'MongoDB', 'JavaScript', 'HTML', 'CSS'],
-            githubUrl: 'https://github.com/Mahi-tech-c/Personal-Portfolio-Website',
+            technologies: ['React', 'Leaflet', 'OSRM API', 'JavaScript'],
             featured: true
         },
         {
-            title: 'E-Commerce Platform',
-            description: 'A feature-rich e-commerce platform with product listings, shopping cart, user authentication, and payment integration. Built with modern web technologies for a seamless shopping experience.',
-            shortDescription: 'Full-featured online shopping platform',
+            title: 'Commercial Full-Stack Cafe Management System',
+            description: 'Engineered a full-stack website featuring a customer-facing public view and an integrated owner management portal. Leveraged AI development tools to streamline the build process and successfully commercialized the final product. Includes menu management, order tracking, and billing.',
+            shortDescription: 'Full-stack cafe website with customer & owner portals',
             category: 'Web Development',
-            technologies: ['React', 'Node.js', 'MongoDB', 'Stripe'],
+            technologies: ['Full-Stack', 'AI Tools', 'Database'],
             featured: true
         },
         {
-            title: 'Weather Dashboard',
-            description: 'A beautiful weather dashboard that displays current weather conditions and forecasts using real-time API data. Features location search and responsive design.',
-            shortDescription: 'Real-time weather information dashboard',
-            category: 'Web Development',
-            technologies: ['JavaScript', 'API', 'HTML', 'CSS'],
-            featured: false
-        },
-        {
-            title: 'Task Management System',
-            description: 'A desktop application for managing tasks and projects with features like drag-and-drop, priority setting, and deadline tracking.',
-            shortDescription: 'Desktop task management application',
+            title: 'Payroll Management System',
+            description: 'Developed a C-based system to manage employee records, automate salary calculation, and generate pay slips. Applied C structures, functions, and algorithms for efficient payroll processing.',
+            shortDescription: 'C-based employee payroll & salary management system',
             category: 'Desktop App',
-            technologies: ['Java', 'JavaFX', 'SQLite'],
+            technologies: ['C', 'Structures', 'File I/O'],
             featured: false
         },
         {
-            title: 'IoT Home Automation',
-            description: 'An IoT-based home automation system that allows users to control home appliances remotely using a web interface and Arduino.',
-            shortDescription: 'Smart home control system',
+            title: 'Automatic Street Light System',
+            description: 'Built using Arduino UNO and LDR sensor. Automated light ON/OFF based on surrounding light intensity, improving energy efficiency. Demonstrates embedded systems and sensor integration.',
+            shortDescription: 'Arduino-based automatic street lighting with LDR sensor',
             category: 'IoT',
-            technologies: ['Arduino', 'C++', 'Node.js', 'MQTT'],
+            technologies: ['Arduino UNO', 'LDR Sensor', 'C++'],
+            featured: false
+        },
+        {
+            title: 'Car Rental Reservation System',
+            description: 'Built a Java application using all OOP concepts for a Car Rental Reservation System. Features include vehicle booking, customer management, and rental tracking with clean object-oriented design.',
+            shortDescription: 'Java OOP-based car rental booking system',
+            category: 'Java',
+            technologies: ['Java', 'OOP', 'Swing'],
             featured: false
         }
     ];
 
     const CERTIFICATES_DATA = [
-        { title: 'Web Development Bootcamp', issuer: 'Udemy', date: '2024', description: 'Comprehensive web development course covering HTML, CSS, JavaScript, Node.js, and more.' },
-        { title: 'JavaScript Algorithms and Data Structures', issuer: 'freeCodeCamp', date: '2024', description: 'Completed 300+ hours of JavaScript programming challenges and projects.' },
-        { title: 'Introduction to IoT', issuer: 'NPTEL', date: '2023', description: 'Foundation course on Internet of Things concepts and applications.' }
+        { title: 'Java (Basics)', issuer: 'HackerRank', date: '2026', description: 'Demonstrates a good understanding of Java basics and the ability to solve programming problems using Java.' },
+        { title: 'Python (Basics)', issuer: 'HackerRank', date: '2026', description: 'Demonstrates understanding of Python basics and the ability to write simple programs using core programming concepts.' }
     ];
 
     const ACHIEVEMENTS_DATA = [
-        { title: 'Hackathon Winner', description: 'Won first place at a regional hackathon for building an innovative web application.', date: '2024', icon: 'trophy' },
-        { title: 'Academic Excellence', description: 'Maintained a CGPA of 8.97 throughout the B.Tech program.', date: '2022-2026', icon: 'star' },
-        { title: 'Open Source Contributor', description: 'Active contributor to open-source projects on GitHub.', date: '2023-Present', icon: 'code' }
+        { title: 'Hackathon — IdeaSprint 24-Hours', description: 'Participated in the IdeaSprint 24-Hours Hackathon and developed the AI-Powered Emergency Traffic Control System, building a real-time dashboard for ambulance routing and traffic signal preemption.', date: '2024', icon: 'trophy' },
+        { title: 'Ideathon', description: 'Participated and presented innovative ideas at an Ideathon competition, showcasing problem-solving and creative thinking skills.', date: '2024', icon: 'lightbulb' }
     ];
 
-    const TYPING_TITLES = ['Computer Science Student', 'Web Developer', 'Problem Solver', 'Tech Enthusiast'];
+    const TYPING_TITLES = ['Computer Science Student', 'Problem Solver', 'Hackathon Participant', 'Tech Enthusiast'];
 
     // ============ ICON HELPERS ============
     const CATEGORY_ICONS = {
         'Web Development': 'fa-globe', 'Desktop App': 'fa-desktop', 'IoT': 'fa-microchip',
         'Mobile App': 'fa-mobile-alt', 'Machine Learning': 'fa-brain', 'Other': 'fa-code',
+        'Java': 'fa-laptop-code',
         'Programming Languages': 'fa-code', 'Database': 'fa-database',
-        'Tools & Technologies': 'fa-tools', 'Soft Skills': 'fa-users'
+        'Tools & Technologies': 'fa-tools', 'Tools': 'fa-wrench',
+        'Soft Skills': 'fa-users', 'Other Skills': 'fa-lightbulb'
     };
     const ACHIEVEMENT_ICONS = {
         'trophy': 'fa-trophy', 'star': 'fa-star', 'code': 'fa-code',
-        'medal': 'fa-medal', 'award': 'fa-award', 'certificate': 'fa-certificate'
+        'medal': 'fa-medal', 'award': 'fa-award', 'certificate': 'fa-certificate',
+        'lightbulb': 'fa-lightbulb'
     };
 
     // ============ THEME ============
