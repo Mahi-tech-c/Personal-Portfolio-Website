@@ -1,3 +1,5 @@
 {
-  "outputDirectory": "client"
+  "outputDirectory": ".",
+  "buildCommand": "echo done",
+  "installCommand": "echo skip"
 }

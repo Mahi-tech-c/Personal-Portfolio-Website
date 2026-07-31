@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Salma Tabassum - Computer Science Engineering Student | Web Developer | Problem Solver">
+    <meta name="keywords" content="portfolio, web developer, computer science, projects">
+    <meta name="author" content="Salma Tabassum">
+    
+    <title>Salma Tabassum | Portfolio</title>
+    
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💻</text></svg>">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <!-- Loader -->
+    <div id="loader" class="loader">
+        <div class="loader-content">
+            <div class="spinner"></div>
+            <p>Loading...</p>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header" id="header">
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-wrapper">
+                    <a href="#home" class="logo">
+                        <i class="fas fa-code"></i>
+                        <span>Salma</span>
+                    </a>
+                    <ul class="nav-menu" id="nav-menu">
+                        <li class="nav-item"><a href="#home" class="nav-link active">Home</a></li>
+                        <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+                        <li class="nav-item"><a href="#skills" class="nav-link">Skills</a></li>
+                        <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
+                        <li class="nav-item"><a href="#certificates" class="nav-link">Certificates</a></li>
+                        <li class="nav-item"><a href="#achievements" class="nav-link">Achievements</a></li>
+                        <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+                    </ul>
+                    <div class="nav-actions">
+                        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                            <span></span><span></span><span></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Home Section -->
+        <section id="home" class="home-section">
+            <div class="home-bg-shapes">
+                <div class="shape shape-1"></div>
+                <div class="shape shape-2"></div>
+                <div class="shape shape-3"></div>
+                <div class="shape shape-4"></div>
+                <div class="shape shape-5"></div>
+                <div class="shape shape-6"></div>
+            </div>
+            <div class="home-grid-overlay"></div>
+            <div class="container">
+                <div class="home-content home-content-centered">
+                    <div class="home-text">
+                        <div class="home-avatar-wrapper">
+                            <div class="home-avatar-ring">
+                                <img src="assets/profile.png" alt="Salma Tabassum" class="home-avatar-img">
+                            </div>
+                        </div>
+                        <p class="home-greeting">Hello, I'm</p>
+                        <h1 class="home-name">Salma Tabassum</h1>
+                        <h2 class="home-title">
+                            <span class="typing-text" id="typing-text"></span>
+                            <span class="cursor">|</span>
+                        </h2>
+                        <p class="home-bio">A dedicated Computer Science and Networks student at Kakatiya Institute of Technology &amp; Science, passionate about building innovative solutions and constantly learning new technologies.</p>
+                        <div class="home-buttons">
+                            <a href="#contact" class="btn btn-primary"><i class="fas fa-envelope"></i> Get In Touch</a>
+                            <a href="#projects" class="btn btn-secondary"><i class="fas fa-folder-open"></i> View Projects</a>
+                        </div>
+                        <div class="social-links">
+                            <a href="https://github.com/Mahi-tech-c" class="social-link" target="_blank"><i class="fab fa-github"></i></a>
+                            <a href="https://www.linkedin.com/in/salma-tabassum-31b165320" class="social-link" target="_blank"><i class="fab fa-linkedin"></i></a>
+                            <a href="mailto:salma3962024@gmail.com" class="social-link"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="scroll-down"><a href="#about"><i class="fas fa-chevron-down"></i></a></div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about-section section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">About Me</h2>
+                    <p class="section-subtitle">Know me better</p>
+                </div>
+                <div class="about-content">
+                    <div class="about-description">
+                        <h3>Who am I?</h3>
+                        <p>I am a dedicated Computer Science and Networks student at Kakatiya Institute of Technology &amp; Science with a strong foundation in programming and web development. Passionate about building innovative solutions and constantly learning new technologies.</p>
+                    </div>
+                    <div class="about-info">
+                        <div class="info-item">
+                            <i class="fas fa-birthday-cake"></i>
+                            <div><span>Birthday</span><strong>June 15, 2005</strong></div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div><span>Location</span><strong>Warangal, Telangana, India</strong></div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-envelope"></i>
+                            <div><span>Email</span><strong>salma3962024@gmail.com</strong></div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-phone"></i>
+                            <div><span>Phone</span><strong>+91 XXXXXXXXXX</strong></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="statistics">
+                    <div class="stat-item">
+                        <div class="stat-icon"><i class="fas fa-briefcase"></i></div>
+                        <h3 class="stat-number" data-target="1">0</h3>
+                        <p class="stat-label">Years Experience</p>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-icon"><i class="fas fa-project-diagram"></i></div>
+                        <h3 class="stat-number" data-target="5">0</h3>
+                        <p class="stat-label">Projects Completed</p>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-icon"><i class="fas fa-trophy"></i></div>
+                        <h3 class="stat-number" data-target="2">0</h3>
+                        <p class="stat-label">Awards Won</p>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-icon"><i class="fas fa-star"></i></div>
+                        <h3 class="stat-number" data-target="8.99" data-decimal="true">0</h3>
+                        <p class="stat-label">CGPA (B.Tech)</p>
+                    </div>
+                </div>
+                <div class="timeline-section">
+                    <h3 class="timeline-title">Education &amp; Experience</h3>
+                    <div class="timeline">
+                        <div class="timeline-item fade-in">
+                            <div class="timeline-card">
+                                <h4>B.Tech in Computer Science and Networks</h4>
+                                <p class="timeline-year">Kakatiya Institute of Technology &amp; Science (KITSW), Warangal | 2024 - 2028</p>
+                                <p>Currently pursuing B.Tech with a focus on Computer Science and Networks. CGPA: 8.99</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item fade-in">
+                            <div class="timeline-card">
+                                <h4>Intermediate (MPC)</h4>
+                                <p class="timeline-year">Telangana Minority Residential Educational Institution Society, Warangal | 2022 - 2024</p>
+                                <p>Completed intermediate with Mathematics, Physics, and Chemistry. CGPA: 9.2</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item fade-in">
+                            <div class="timeline-card">
+                                <h4>SSC (Secondary School Certificate)</h4>
+                                <p class="timeline-year">Telangana Minority Residential Educational Institution Society, Warangal | 2022</p>
+                                <p>Completed secondary school education. CGPA: 9.7</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="skills-section section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">My Skills</h2>
+                    <p class="section-subtitle">Technologies I work with</p>
+                </div>
+                <div class="skills-container" id="skills-container">
+                    <!-- Filled by script below -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="projects-section section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">My Projects</h2>
+                    <p class="section-subtitle">Recent works and case studies</p>
+                </div>
+                <div class="projects-filters" id="project-filters">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="Web Development">Web</button>
+                    <button class="filter-btn" data-filter="Desktop App">Desktop</button>
+                    <button class="filter-btn" data-filter="IoT">IoT</button>
+                    <button class="filter-btn" data-filter="Java">Java</button>
+                </div>
+                <div class="projects-search">
+                    <input type="text" id="project-search" placeholder="Search projects...">
+                    <i class="fas fa-search"></i>
+                </div>
+                <div class="projects-grid" id="projects-grid">
+                    <!-- Filled by script below -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Certificates Section -->
+        <section id="certificates" class="certificates-section section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Certificates</h2>
+                    <p class="section-subtitle">Professional certifications</p>
+                </div>
+                <div class="certificates-grid" id="certificates-grid">
+                    <!-- Filled by script below -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Achievements Section -->
+        <section id="achievements" class="achievements-section section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Achievements</h2>
+                    <p class="section-subtitle">Awards and recognitions</p>
+                </div>
+                <div class="achievements-grid" id="achievements-grid">
+                    <!-- Filled by script below -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Get In Touch</h2>
+                    <p class="section-subtitle">Let's work together</p>
+                </div>
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <h3>Contact Information</h3>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div><h4>Location</h4><p>Warangal, Telangana, India</p></div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div><h4>Email</h4><p>salma3962024@gmail.com</p></div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div><h4>Phone</h4><p>+91 XXXXXXXXXX</p></div>
+                        </div>
+                        <div class="contact-social">
+                            <h4>Follow Me</h4>
+                            <div class="social-icons">
+                                <a href="https://github.com/Mahi-tech-c" class="social-icon" target="_blank"><i class="fab fa-github"></i></a>
+                                <a href="https://www.linkedin.com/in/salma-tabassum-31b165320" class="social-icon" target="_blank"><i class="fab fa-linkedin"></i></a>
+                                <a href="mailto:salma3962024@gmail.com" class="social-icon"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-form-wrapper">
+                        <form id="contact-form" class="contact-form">
+                            <div class="form-group">
+                                <input type="text" name="name" id="name" placeholder="Your Name" required>
+                                <span class="error-message" id="name-error"></span>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" name="email" id="email" placeholder="Your Email" required>
+                                <span class="error-message" id="email-error"></span>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="subject" id="subject" placeholder="Subject" required>
+                                <span class="error-message" id="subject-error"></span>
+                            </div>
+                            <div class="form-group">
+                                <textarea name="message" id="message" rows="6" placeholder="Your Message" required></textarea>
+                                <span class="error-message" id="message-error"></span>
+                            </div>
+                            <button type="submit" class="btn btn-primary submit-btn">
+                                <span class="btn-text">Send Message</span>
+                                <span class="btn-loader" style="display:none;"><i class="fas fa-spinner fa-spin"></i></span>
+                            </button>
+                            <div class="form-message" id="form-message"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; <span id="current-year">2024</span> Salma Tabassum. All rights reserved.</p>
+                <p>Built with <i class="fas fa-heart"></i> using HTML, CSS, JavaScript &amp; Node.js</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
+
+    <!-- Project Modal -->
+    <div id="project-modal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <div class="modal-body" id="modal-body"></div>
+        </div>
+    </div>
+
+    <!-- ============================
+         INLINE DATA & SCRIPTS
+         All data embedded — no server needed
+         ============================ -->
+    <script>
+    // ============ EMBEDDED DATA ============
+    const SKILLS_DATA = [
+        { name: 'C', category: 'Programming Languages', proficiency: 85 },
+        { name: 'Java', category: 'Programming Languages', proficiency: 80 },
+        { name: 'Data Structures', category: 'Programming Languages', proficiency: 78 },
+        { name: 'Python (Basics)', category: 'Programming Languages', proficiency: 55 },
+        { name: 'AutoCAD', category: 'Programming Languages', proficiency: 65 },
+        { name: 'Database Management (Basics)', category: 'Database', proficiency: 60 },
+        { name: 'MS Word', category: 'Tools', proficiency: 80 },
+        { name: 'MS Excel (Basics)', category: 'Tools', proficiency: 65 },
+        { name: 'MS PowerPoint', category: 'Tools', proficiency: 75 },
+        { name: 'Problem Solving', category: 'Other Skills', proficiency: 90 },
+        { name: 'Communication Skills', category: 'Other Skills', proficiency: 85 },
+        { name: 'Time Management', category: 'Other Skills', proficiency: 88 }
+    ];
+
+    const PROJECTS_DATA = [
+        {
+            title: 'AI-Powered Emergency Traffic Control System',
+            description: 'Developed a real-time dashboard for ambulance routing and traffic signal preemption using React, Leaflet, and OSRM API during the IdeaSprint 24-Hours Hackathon. Features live vehicle tracking, optimized route calculation, and automated traffic signal control for emergency vehicles.',
+            shortDescription: 'Real-time ambulance routing & traffic signal preemption dashboard',
+            category: 'Web Development',
+            technologies: ['React', 'Leaflet', 'OSRM API', 'JavaScript'],
+            featured: true
+        },
+        {
+            title: 'Commercial Full-Stack Cafe Management System',
+            description: 'Engineered a full-stack website featuring a customer-facing public view and an integrated owner management portal. Leveraged AI development tools to streamline the build process and successfully commercialized the final product. Includes menu management, order tracking, and billing.',
+            shortDescription: 'Full-stack cafe website with customer & owner portals',
+            category: 'Web Development',
+            technologies: ['Full-Stack', 'AI Tools', 'Database'],
+            githubUrl: 'https://github.com/Mahi-tech-c/smaakenzzoo',
+            liveUrl: 'https://smaakenzo.vercel.app',
+            featured: true
+        },
+        {
+            title: 'Payroll Management System',
+            description: 'Developed a C-based system to manage employee records, automate salary calculation, and generate pay slips. Applied C structures, functions, and algorithms for efficient payroll processing.',
+            shortDescription: 'C-based employee payroll & salary management system',
+            category: 'Desktop App',
+            technologies: ['C', 'Structures', 'File I/O'],
+            featured: false
+        },
+        {
+            title: 'Automatic Street Light System',
+            description: 'Built using Arduino UNO and LDR sensor. Automated light ON/OFF based on surrounding light intensity, improving energy efficiency. Demonstrates embedded systems and sensor integration.',
+            shortDescription: 'Arduino-based automatic street lighting with LDR sensor',
+            category: 'IoT',
+            technologies: ['Arduino UNO', 'LDR Sensor', 'C++'],
+            featured: false
+        },
+        {
+            title: 'Car Rental Reservation System',
+            description: 'Built a Java application using all OOP concepts for a Car Rental Reservation System. Features include vehicle booking, customer management, and rental tracking with clean object-oriented design.',
+            shortDescription: 'Java OOP-based car rental booking system',
+            category: 'Java',
+            technologies: ['Java', 'OOP', 'Swing'],
+            featured: false
+        }
+    ];
+
+    const CERTIFICATES_DATA = [
+        { title: 'Java (Basics)', issuer: 'HackerRank', date: '2026', description: 'Demonstrates a good understanding of Java basics and the ability to solve programming problems using Java.' },
+        { title: 'Python (Basics)', issuer: 'HackerRank', date: '2026', description: 'Demonstrates understanding of Python basics and the ability to write simple programs using core programming concepts.' }
+    ];
+
+    const ACHIEVEMENTS_DATA = [
+        { title: 'Hackathon \u2014 IdeaSprint 24-Hours', description: 'Participated in the IdeaSprint 24-Hours Hackathon and developed the AI-Powered Emergency Traffic Control System, building a real-time dashboard for ambulance routing and traffic signal preemption.', date: '2024', icon: 'trophy' },
+        { title: 'Ideathon', description: 'Participated and presented innovative ideas at an Ideathon competition, showcasing problem-solving and creative thinking skills.', date: '2024', icon: 'lightbulb' }
+    ];
+
+    const TYPING_TITLES = ['Computer Science Student', 'Problem Solver', 'Hackathon Participant', 'Tech Enthusiast'];
+
+    // ============ ICON HELPERS ============
+    const CATEGORY_ICONS = {
+        'Web Development': 'fa-globe', 'Desktop App': 'fa-desktop', 'IoT': 'fa-microchip',
+        'Mobile App': 'fa-mobile-alt', 'Machine Learning': 'fa-brain', 'Other': 'fa-code',
+        'Java': 'fa-laptop-code',
+        'Programming Languages': 'fa-code', 'Database': 'fa-database',
+        'Tools & Technologies': 'fa-tools', 'Tools': 'fa-wrench',
+        'Soft Skills': 'fa-users', 'Other Skills': 'fa-lightbulb'
+    };
+    const ACHIEVEMENT_ICONS = {
+        'trophy': 'fa-trophy', 'star': 'fa-star', 'code': 'fa-code',
+        'medal': 'fa-medal', 'award': 'fa-award', 'certificate': 'fa-certificate',
+        'lightbulb': 'fa-lightbulb'
+    };
+
+    // ============ THEME ============
+    (function initTheme() {
+        const saved = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', saved);
+        const toggle = document.getElementById('theme-toggle');
+        if (toggle) {
+            toggle.querySelector('i').className = saved === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+            toggle.addEventListener('click', function() {
+                var current = document.documentElement.getAttribute('data-theme');
+                var next = current === 'dark' ? 'light' : 'dark';
+                document.documentElement.setAttribute('data-theme', next);
+                localStorage.setItem('theme', next);
+                toggle.querySelector('i').className = next === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+            });
+        }
+    })();
+
+    // ============ NAVIGATION ============
+    (function initNav() {
+        var hamburger = document.getElementById('hamburger');
+        var navMenu = document.getElementById('nav-menu');
+        if (hamburger && navMenu) {
+            hamburger.addEventListener('click', function() {
+                hamburger.classList.toggle('active');
+                navMenu.classList.toggle('active');
+            });
+            navMenu.querySelectorAll('.nav-link').forEach(function(link) {
+                link.addEventListener('click', function() {
+                    hamburger.classList.remove('active');
+                    navMenu.classList.remove('active');
+                });
+            });
+        }
+        // Scroll spy
+        var sections = document.querySelectorAll('section[id]');
+        var navLinks = document.querySelectorAll('.nav-link');
+        window.addEventListener('scroll', function() {
+            var scrollY = window.scrollY + 100;
+            sections.forEach(function(s) {
+                if (scrollY >= s.offsetTop && scrollY < s.offsetTop + s.offsetHeight) {
+                    navLinks.forEach(function(l) {
+                        l.classList.remove('active');
+                        if (l.getAttribute('href') === '#' + s.id) l.classList.add('active');
+                    });
+                }
+            });
+            document.getElementById('header').classList.toggle('scrolled', window.scrollY > 50);
+            document.getElementById('back-to-top').classList.toggle('visible', window.scrollY > 300);
+        });
+        // Back to top
+        document.getElementById('back-to-top').addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+            a.addEventListener('click', function(e) {
+                e.preventDefault();
+                var t = document.querySelector(a.getAttribute('href'));
+                if (t) window.scrollTo({ top: t.offsetTop - 70, behavior: 'smooth' });
+            });
+        });
+    })();
+
+    // ============ TYPING ANIMATION ============
+    (function initTyping() {
+        var el = document.getElementById('typing-text');
+        if (!el || !TYPING_TITLES.length) return;
+        var ti = 0, ci = 0, deleting = false;
+        function type() {
+            var title = TYPING_TITLES[ti];
+            if (deleting) { el.textContent = title.substring(0, ci - 1); ci--; }
+            else { el.textContent = title.substring(0, ci + 1); ci++; }
+            var speed = deleting ? 50 : 100;
+            if (!deleting && ci === title.length) { speed = 2000; deleting = true; }
+            else if (deleting && ci === 0) { deleting = false; ti = (ti + 1) % TYPING_TITLES.length; speed = 500; }
+            setTimeout(type, speed);
+        }
+        type();
+    })();
+
+    // ============ COUNTER ANIMATION ============
+    (function initCounters() {
+        var observer = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    var el = entry.target;
+                    var target = parseFloat(el.dataset.target);
+                    var isDecimal = el.dataset.decimal === 'true';
+                    var start = performance.now();
+                    function update(now) {
+                        var progress = Math.min((now - start) / 2000, 1);
+                        var eased = 1 - Math.pow(1 - progress, 3);
+                        el.textContent = isDecimal ? (target * eased).toFixed(2) : Math.floor(target * eased);
+                        if (progress < 1) requestAnimationFrame(update);
+                        else el.textContent = isDecimal ? target.toFixed(2) : target;
+                    }
+                    requestAnimationFrame(update);
+                    observer.unobserve(el);
+                }
+            });
+        }, { threshold: 0.5 });
+        document.querySelectorAll('.stat-number').forEach(function(c) { observer.observe(c); });
+    })();
+
+    // ============ RENDER SKILLS ============
+    (function renderSkills() {
+        var container = document.getElementById('skills-container');
+        if (!container) return;
+        var grouped = {};
+        SKILLS_DATA.forEach(function(s) {
+            if (!grouped[s.category]) grouped[s.category] = [];
+            grouped[s.category].push(s);
+        });
+        var html = '';
+        Object.keys(grouped).forEach(function(cat) {
+            html += '<div class="skill-category fade-in" data-category="' + cat + '">';
+            html += '<h3><i class="fas ' + (CATEGORY_ICONS[cat] || 'fa-code') + '"></i> ' + cat + '</h3>';
+            grouped[cat].forEach(function(s) {
+                html += '<div class="skill-item">';
+                html += '<div class="skill-header">';
+                html += '<span class="skill-name">' + s.name + '</span>';
+                html += '<span class="skill-percent">' + s.proficiency + '%</span>';
+                html += '</div>';
+                html += '<div class="skill-bar">';
+                html += '<div class="skill-progress" data-width="' + s.proficiency + '"></div>';
+                html += '</div></div>';
+            });
+            html += '</div>';
+        });
+        container.innerHTML = html;
+    })();
+
+    // ============ RENDER PROJECTS ============
+    var currentFilter = 'all';
+    function renderProjects(filter, search) {
+        var grid = document.getElementById('projects-grid');
+        if (!grid) return;
+        var projects = PROJECTS_DATA.slice();
+        if (filter && filter !== 'all') projects = projects.filter(function(p) { return p.category === filter; });
+        if (search) {
+            var q = search.toLowerCase();
+            projects = projects.filter(function(p) {
+                return p.title.toLowerCase().indexOf(q) !== -1 ||
+                       p.description.toLowerCase().indexOf(q) !== -1 ||
+                       p.technologies.some(function(t) { return t.toLowerCase().indexOf(q) !== -1; });
+            });
+        }
+        if (!projects.length) {
+            grid.innerHTML = '<div class="empty-state"><i class="fas fa-project-diagram"></i><p>No projects found.</p></div>';
+            return;
+        }
+        var html = '';
+        projects.forEach(function(p, i) {
+            var origIndex = PROJECTS_DATA.indexOf(p);
+            html += '<div class="project-card fade-in visible" data-index="' + origIndex + '" data-filter="' + p.category + '">';
+            html += '<div class="project-image">';
+            html += '<i class="fas ' + (CATEGORY_ICONS[p.category] || 'fa-folder') + '"></i>';
+            if (p.featured) html += '<span class="project-badge">Featured</span>';
+            html += '</div>';
+            html += '<div class="project-content">';
+            html += '<h3>' + p.title + '</h3>';
+            html += '<p>' + (p.shortDescription || p.description) + '</p>';
+            html += '<div class="project-tech">';
+            p.technologies.slice(0, 4).forEach(function(t) {
+                html += '<span class="tech-tag">' + t + '</span>';
+            });
+            html += '</div>';
+            html += '<div class="project-links">';
+            if (p.githubUrl) html += '<a href="' + p.githubUrl + '" class="project-link" target="_blank"><i class="fab fa-github"></i> Code</a>';
+            if (p.liveUrl) html += '<a href="' + p.liveUrl + '" class="project-link" target="_blank"><i class="fas fa-external-link-alt"></i> Live</a>';
+            html += '</div></div></div>';
+        });
+        grid.innerHTML = html;
+        // Modal click
+        grid.querySelectorAll('.project-card').forEach(function(card) {
+            card.addEventListener('click', function(e) {
+                if (e.target.closest('a')) return;
+                var idx = parseInt(card.dataset.index);
+                var p = PROJECTS_DATA[idx];
+                var modal = document.getElementById('project-modal');
+                var modalHtml = '<h2>' + p.title + '</h2>';
+                modalHtml += '<p class="modal-category"><i class="fas ' + (CATEGORY_ICONS[p.category] || '') + '"></i> ' + p.category + '</p>';
+                modalHtml += '<p class="modal-description">' + p.description + '</p>';
+                modalHtml += '<div class="modal-tech">';
+                p.technologies.forEach(function(t) { modalHtml += '<span class="tech-tag">' + t + '</span>'; });
+                modalHtml += '</div>';
+                modalHtml += '<div class="modal-links">';
+                if (p.githubUrl) modalHtml += '<a href="' + p.githubUrl + '" class="btn btn-secondary" target="_blank"><i class="fab fa-github"></i> View Code</a>';
+                if (p.liveUrl) modalHtml += '<a href="' + p.liveUrl + '" class="btn btn-primary" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>';
+                modalHtml += '</div>';
+                document.getElementById('modal-body').innerHTML = modalHtml;
+                modal.classList.add('active');
+            });
+        });
+    }
+    renderProjects('all', '');
+
+    // Filters
+    document.getElementById('project-filters').addEventListener('click', function(e) {
+        if (e.target.classList.contains('filter-btn')) {
+            document.querySelectorAll('.filter-btn').forEach(function(b) { b.classList.remove('active'); });
+            e.target.classList.add('active');
+            currentFilter = e.target.dataset.filter;
+            renderProjects(currentFilter, document.getElementById('project-search').value);
+        }
+    });
+    document.getElementById('project-search').addEventListener('input', function(e) {
+        renderProjects(currentFilter, e.target.value);
+    });
+
+    // Modal close
+    document.querySelector('.modal-close').addEventListener('click', function() {
+        document.getElementById('project-modal').classList.remove('active');
+    });
+    document.getElementById('project-modal').addEventListener('click', function(e) {
+        if (e.target.id === 'project-modal') e.target.classList.remove('active');
+    });
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') document.getElementById('project-modal').classList.remove('active');
+    });
+
+    // ============ RENDER CERTIFICATES ============
+    (function renderCerts() {
+        var grid = document.getElementById('certificates-grid');
+        if (!grid) return;
+        var html = '';
+        CERTIFICATES_DATA.forEach(function(c) {
+            html += '<div class="certificate-card fade-in">';
+            html += '<div class="cert-icon"><i class="fas fa-certificate"></i></div>';
+            html += '<h3>' + c.title + '</h3>';
+            html += '<p class="cert-issuer">' + c.issuer + '</p>';
+            html += '<p class="cert-date"><i class="fas fa-calendar-alt"></i> ' + c.date + '</p>';
+            html += '<p>' + c.description + '</p>';
+            html += '</div>';
+        });
+        grid.innerHTML = html;
+    })();
+
+    // ============ RENDER ACHIEVEMENTS ============
+    (function renderAchievements() {
+        var grid = document.getElementById('achievements-grid');
+        if (!grid) return;
+        var html = '';
+        ACHIEVEMENTS_DATA.forEach(function(a) {
+            var icon = ACHIEVEMENT_ICONS[a.icon] || 'fa-trophy';
+            html += '<div class="achievement-card fade-in">';
+            html += '<div class="achievement-icon"><i class="fas ' + icon + '"></i></div>';
+            html += '<h3>' + a.title + '</h3>';
+            if (a.date) html += '<p class="achievement-date">' + a.date + '</p>';
+            html += '<p>' + a.description + '</p>';
+            html += '</div>';
+        });
+        grid.innerHTML = html;
+    })();
+
+    // ============ SCROLL REVEAL & SKILL BARS ============
+    // MUST run AFTER all render functions so dynamically created elements are observed
+    (function initReveal() {
+        var observer = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+        // Observe ALL elements that need fade-in
+        var selectors = '.fade-in, .stat-item, .project-card, .certificate-card, .achievement-card, .skill-category, .timeline-card';
+        document.querySelectorAll(selectors).forEach(function(el) {
+            if (!el.classList.contains('fade-in')) el.classList.add('fade-in');
+            observer.observe(el);
+        });
+
+        // Skill bar animation
+        var skillObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    entry.target.querySelectorAll('.skill-progress').forEach(function(bar) {
+                        var width = bar.getAttribute('data-width');
+                        if (width) {
+                            setTimeout(function() { bar.style.width = width + '%'; }, 300);
+                        }
+                    });
+                }
+            });
+        }, { threshold: 0.2 });
+
+        document.querySelectorAll('.skill-category').forEach(function(el) {
+            skillObserver.observe(el);
+        });
+    })();
+
+    // ============ CONTACT FORM ============
+    document.getElementById('contact-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        var form = e.target;
+        var msg = document.getElementById('form-message');
+        var btnText = form.querySelector('.btn-text');
+        var btnLoader = form.querySelector('.btn-loader');
+
+        // Clear errors
+        form.querySelectorAll('.error-message').forEach(function(el) { el.textContent = ''; });
+        msg.className = 'form-message';
+        msg.style.display = 'none';
+
+        var data = {
+            name: form.name.value.trim(),
+            email: form.email.value.trim(),
+            subject: form.subject.value.trim(),
+            message: form.message.value.trim()
+        };
+
+        var err = false;
+        if (data.name.length < 2) { document.getElementById('name-error').textContent = 'Name must be at least 2 characters'; err = true; }
+        if (!/^\S+@\S+\.\S+$/.test(data.email)) { document.getElementById('email-error').textContent = 'Please enter a valid email'; err = true; }
+        if (data.subject.length < 2) { document.getElementById('subject-error').textContent = 'Subject must be at least 2 characters'; err = true; }
+        if (data.message.length < 10) { document.getElementById('message-error').textContent = 'Message must be at least 10 characters'; err = true; }
+        if (err) return;
+
+        btnText.style.display = 'none';
+        btnLoader.style.display = 'inline-flex';
+
+        setTimeout(function() {
+            msg.textContent = 'Thank you! Your message has been received. I will get back to you soon.';
+            msg.className = 'form-message success';
+            msg.style.display = 'block';
+            form.reset();
+            btnText.style.display = 'inline-flex';
+            btnLoader.style.display = 'none';
+        }, 1000);
+    });
+
+    // ============ FOOTER YEAR ============
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+
+    // ============ HIDE LOADER ============
+    window.addEventListener('load', function() {
+        setTimeout(function() {
+            var loader = document.getElementById('loader');
+            if (loader) {
+                loader.classList.add('hidden');
+                setTimeout(function() { loader.remove(); }, 300);
+            }
+        }, 500);
+    });
+    </script>
+</body>
+</html>
