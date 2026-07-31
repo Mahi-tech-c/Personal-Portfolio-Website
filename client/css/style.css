@@ -754,6 +754,8 @@ a:hover {
 .info-item span {
     color: var(--text-secondary);
     font-size: 0.875rem;
+    display: block;
+    margin-bottom: 6px;
 }
 
 .info-item strong {
