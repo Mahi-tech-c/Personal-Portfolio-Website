@@ -1,5 +1,0 @@
-example.com {
-    # Enable automatic HTTPS (requires domain DNS pointing to this server)
-    tls your-email@example.com
-    reverse_proxy app:3000
-}
