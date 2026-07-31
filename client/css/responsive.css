@@ -19,7 +19,7 @@
         left: -100%;
         width: 100%;
         height: calc(100vh - 70px);
-        background: var(--bg-primary);
+        background: rgba(15, 12, 41, 0.98);
         flex-direction: column;
         align-items: center;
         justify-content: center;
@@ -37,17 +37,12 @@
     }
 
     /* Home Section */
-    .home-content {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
-
     .home-name {
         font-size: 2.25rem;
     }
 
     .home-title {
-        font-size: 1.5rem;
+        font-size: 1.25rem;
     }
 
     .home-buttons {
@@ -59,11 +54,12 @@
         justify-content: center;
     }
 
-    .home-image {
-        order: -1;
-        max-width: 300px;
-        margin: 0 auto;
-    }
+    .shape-1 { width: 200px; height: 200px; }
+    .shape-2 { width: 150px; height: 150px; }
+    .shape-3 { width: 100px; height: 100px; }
+    .shape-4 { width: 80px; height: 80px; }
+    .shape-5 { width: 60px; height: 60px; }
+    .shape-6 { width: 120px; height: 120px; }
 
     /* About Section */
     .about-content {
@@ -132,12 +128,12 @@
     }
 
     .home-name {
-        font-size: 1.75rem;
+        font-size: 2rem;
     }
 
     .home-title {
-        font-size: 1.25rem;
-        min-height: 40px;
+        font-size: 1.1rem;
+        min-height: 35px;
     }
 
     .home-buttons {
@@ -192,10 +188,10 @@
 /* Large screens */
 @media screen and (min-width: 1200px) {
     .home-name {
-        font-size: 3.5rem;
+        font-size: 4rem;
     }
 
     .home-title {
-        font-size: 2.25rem;
+        font-size: 2rem;
     }
 }
