@@ -42,6 +42,9 @@ coverage/
 tmp/
 temp/
 
+# NeDB data files
+server/data/
+
 # Lock files (optional)
 package-lock.json
 yarn.lock

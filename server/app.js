@@ -3,7 +3,6 @@ const cors = require('cors');
 const helmet = require('helmet');
 const compression = require('compression');
 const morgan = require('morgan');
-const mongoSanitize = require('express-mongo-sanitize');
 const path = require('path');
 const errorHandler = require('./middleware/errorHandler');
 const { apiLimiter } = require('./middleware/rateLimiter');
@@ -29,7 +28,6 @@ app.use(cors({
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     allowedHeaders: ['Content-Type', 'Authorization']
 }));
-app.use(mongoSanitize());
 
 // Body parsers
 app.use(express.json({ limit: '10mb' }));

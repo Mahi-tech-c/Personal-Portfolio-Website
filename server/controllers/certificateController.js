@@ -4,7 +4,8 @@ const Certificate = require('../models/Certificate');
 // @route   GET /api/certificates
 const getCertificates = async (req, res, next) => {
     try {
-        const certificates = await Certificate.find().sort({ createdAt: -1 });
+        let certificates = await Certificate.find();
+        certificates.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
         res.status(200).json({ success: true, data: certificates });
     } catch (error) {
         next(error);
@@ -26,10 +27,7 @@ const createCertificate = async (req, res, next) => {
 // @route   PUT /api/certificates/:id
 const updateCertificate = async (req, res, next) => {
     try {
-        const certificate = await Certificate.findByIdAndUpdate(req.params.id, req.body, {
-            new: true,
-            runValidators: true
-        });
+        const certificate = await Certificate.findByIdAndUpdate(req.params.id, req.body);
         if (!certificate) {
             return res.status(404).json({ success: false, message: 'Certificate not found' });
         }

@@ -4,7 +4,13 @@ const Skill = require('../models/Skill');
 // @route   GET /api/skills
 const getSkills = async (req, res, next) => {
     try {
-        const skills = await Skill.find().sort({ category: 1, proficiency: -1 });
+        let skills = await Skill.find();
+
+        // Sort by category then proficiency descending
+        skills.sort((a, b) => {
+            if (a.category !== b.category) return a.category.localeCompare(b.category);
+            return b.proficiency - a.proficiency;
+        });
 
         // Group by category
         const grouped = skills.reduce((acc, skill) => {
@@ -36,10 +42,7 @@ const createSkill = async (req, res, next) => {
 // @route   PUT /api/skills/:id
 const updateSkill = async (req, res, next) => {
     try {
-        const skill = await Skill.findByIdAndUpdate(req.params.id, req.body, {
-            new: true,
-            runValidators: true
-        });
+        const skill = await Skill.findByIdAndUpdate(req.params.id, req.body);
         if (!skill) {
             return res.status(404).json({ success: false, message: 'Skill not found' });
         }

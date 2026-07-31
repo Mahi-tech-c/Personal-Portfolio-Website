@@ -1,5 +1,4 @@
 const Message = require('../models/Message');
-const { sendContactNotification, sendContactConfirmation } = require('../utils/email');
 
 // @desc    Submit contact form
 // @route   POST /api/contact
@@ -9,12 +8,15 @@ const submitContact = async (req, res, next) => {
 
         const newMessage = await Message.create({ name, email, subject, message });
 
-        // Send emails (don't block response if email fails)
-        try {
-            await sendContactNotification({ name, email, subject, message });
-            await sendContactConfirmation({ name, email, subject, message });
-        } catch (emailError) {
-            console.error('Email sending failed:', emailError.message);
+        // Email sending is optional - skip if not configured
+        if (process.env.EMAIL_USER && process.env.EMAIL_PASS) {
+            try {
+                const { sendContactNotification, sendContactConfirmation } = require('../utils/email');
+                await sendContactNotification({ name, email, subject, message });
+                await sendContactConfirmation({ name, email, subject, message });
+            } catch (emailError) {
+                console.error('Email sending failed:', emailError.message);
+            }
         }
 
         res.status(201).json({
@@ -31,7 +33,8 @@ const submitContact = async (req, res, next) => {
 // @route   GET /api/messages
 const getMessages = async (req, res, next) => {
     try {
-        const messages = await Message.find().sort({ createdAt: -1 });
+        let messages = await Message.find();
+        messages.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
         res.status(200).json({ success: true, data: messages });
     } catch (error) {
         next(error);

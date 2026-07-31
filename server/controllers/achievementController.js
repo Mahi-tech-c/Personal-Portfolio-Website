@@ -4,7 +4,8 @@ const Achievement = require('../models/Achievement');
 // @route   GET /api/achievements
 const getAchievements = async (req, res, next) => {
     try {
-        const achievements = await Achievement.find().sort({ createdAt: -1 });
+        let achievements = await Achievement.find();
+        achievements.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
         res.status(200).json({ success: true, data: achievements });
     } catch (error) {
         next(error);
@@ -26,10 +27,7 @@ const createAchievement = async (req, res, next) => {
 // @route   PUT /api/achievements/:id
 const updateAchievement = async (req, res, next) => {
     try {
-        const achievement = await Achievement.findByIdAndUpdate(req.params.id, req.body, {
-            new: true,
-            runValidators: true
-        });
+        const achievement = await Achievement.findByIdAndUpdate(req.params.id, req.body);
         if (!achievement) {
             return res.status(404).json({ success: false, message: 'Achievement not found' });
         }

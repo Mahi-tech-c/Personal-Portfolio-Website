@@ -15,27 +15,36 @@ const getProjects = async (req, res, next) => {
             query.featured = true;
         }
 
+        let projects = await Project.find(query);
+
+        // Search filter (in-memory for NeDB compatibility)
         if (search) {
-            query.$or = [
-                { title: { $regex: search, $options: 'i' } },
-                { description: { $regex: search, $options: 'i' } },
-                { technologies: { $regex: search, $options: 'i' } }
-            ];
+            const searchLower = search.toLowerCase();
+            projects = projects.filter(p =>
+                p.title.toLowerCase().includes(searchLower) ||
+                p.description.toLowerCase().includes(searchLower) ||
+                (p.technologies || []).some(t => t.toLowerCase().includes(searchLower))
+            );
         }
 
-        const total = await Project.countDocuments(query);
-        const projects = await Project.find(query)
-            .sort({ createdAt: -1 })
-            .skip((page - 1) * limit)
-            .limit(parseInt(limit));
+        // Sort by createdAt descending
+        projects.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+
+        const total = projects.length;
+
+        // Pagination
+        const pageNum = parseInt(page);
+        const limitNum = parseInt(limit);
+        const startIndex = (pageNum - 1) * limitNum;
+        const paginated = projects.slice(startIndex, startIndex + limitNum);
 
         res.status(200).json({
             success: true,
-            data: projects,
+            data: paginated,
             pagination: {
                 total,
-                page: parseInt(page),
-                pages: Math.ceil(total / limit)
+                page: pageNum,
+                pages: Math.ceil(total / limitNum)
             }
         });
     } catch (error) {
@@ -75,10 +84,7 @@ const createProject = async (req, res, next) => {
 // @route   PUT /api/projects/:id
 const updateProject = async (req, res, next) => {
     try {
-        const project = await Project.findByIdAndUpdate(req.params.id, req.body, {
-            new: true,
-            runValidators: true
-        });
+        const project = await Project.findByIdAndUpdate(req.params.id, req.body);
         if (!project) {
             return res.status(404).json({
                 success: false,

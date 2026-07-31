@@ -1,17 +1,11 @@
-const mongoose = require('mongoose');
+// Database configuration
+// Using NeDB (file-based, no MongoDB server required)
+// For production, swap this adapter with real Mongoose/MongoDB
 
 const connectDB = async () => {
-    try {
-        const conn = await mongoose.connect(process.env.MONGO_URI, {
-            useNewUrlParser: true,
-            useUnifiedTopology: true,
-        });
-        console.log(`✅ MongoDB Connected: ${conn.connection.host}`);
-        return conn;
-    } catch (error) {
-        console.error(`❌ MongoDB Connection Error: ${error.message}`);
-        process.exit(1);
-    }
+    // NeDB initializes automatically via the adapter
+    // No external connection needed
+    console.log('✅ Database ready (NeDB file-based)');
 };
 
 module.exports = connectDB;
