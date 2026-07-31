@@ -865,15 +865,88 @@ a:hover {
     padding: var(--spacing-lg);
     border-radius: 1rem;
     box-shadow: var(--shadow-md);
+    border-left: 4px solid var(--primary-color);
+    transition: all var(--transition);
 }
 
+.skill-category:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+}
+
+.skill-category[data-category="Programming Languages"] { border-left-color: #6366f1; }
+.skill-category[data-category="Database"] { border-left-color: #10b981; }
+.skill-category[data-category="Tools"] { border-left-color: #f59e0b; }
+.skill-category[data-category="Other Skills"] { border-left-color: #ec4899; }
+.skill-category[data-category="Web Development"] { border-left-color: #06b6d4; }
+.skill-category[data-category="Soft Skills"] { border-left-color: #8b5cf6; }
+.skill-category[data-category="Tools & Technologies"] { border-left-color: #f59e0b; }
+
 .skill-category h3 {
-    color: var(--primary-color);
     margin-bottom: var(--spacing-md);
     font-size: 1.25rem;
     display: flex;
     align-items: center;
     gap: var(--spacing-xs);
+    padding-bottom: var(--spacing-sm);
+    border-bottom: 2px solid var(--border-color);
+}
+
+/* Skill category color themes */
+.skill-category[data-category="Programming Languages"] h3 {
+    color: #6366f1;
+    border-bottom-color: #6366f1;
+}
+.skill-category[data-category="Programming Languages"] .skill-progress {
+    background: linear-gradient(135deg, #6366f1 0%, #818cf8 100%);
+}
+
+.skill-category[data-category="Database"] h3 {
+    color: #10b981;
+    border-bottom-color: #10b981;
+}
+.skill-category[data-category="Database"] .skill-progress {
+    background: linear-gradient(135deg, #10b981 0%, #34d399 100%);
+}
+
+.skill-category[data-category="Tools"] h3 {
+    color: #f59e0b;
+    border-bottom-color: #f59e0b;
+}
+.skill-category[data-category="Tools"] .skill-progress {
+    background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%);
+}
+
+.skill-category[data-category="Other Skills"] h3 {
+    color: #ec4899;
+    border-bottom-color: #ec4899;
+}
+.skill-category[data-category="Other Skills"] .skill-progress {
+    background: linear-gradient(135deg, #ec4899 0%, #f472b6 100%);
+}
+
+.skill-category[data-category="Web Development"] h3 {
+    color: #06b6d4;
+    border-bottom-color: #06b6d4;
+}
+.skill-category[data-category="Web Development"] .skill-progress {
+    background: linear-gradient(135deg, #06b6d4 0%, #22d3ee 100%);
+}
+
+.skill-category[data-category="Soft Skills"] h3 {
+    color: #8b5cf6;
+    border-bottom-color: #8b5cf6;
+}
+.skill-category[data-category="Soft Skills"] .skill-progress {
+    background: linear-gradient(135deg, #8b5cf6 0%, #a78bfa 100%);
+}
+
+.skill-category[data-category="Tools & Technologies"] h3 {
+    color: #f59e0b;
+    border-bottom-color: #f59e0b;
+}
+.skill-category[data-category="Tools & Technologies"] .skill-progress {
+    background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%);
 }
 
 .skill-item {
@@ -892,9 +965,29 @@ a:hover {
 }
 
 .skill-percent {
-    color: var(--primary-color);
     font-weight: 600;
 }
+
+.skill-category[data-category="Programming Languages"] .skill-name,
+.skill-category[data-category="Programming Languages"] .skill-percent { color: #6366f1; }
+
+.skill-category[data-category="Database"] .skill-name,
+.skill-category[data-category="Database"] .skill-percent { color: #10b981; }
+
+.skill-category[data-category="Tools"] .skill-name,
+.skill-category[data-category="Tools"] .skill-percent { color: #f59e0b; }
+
+.skill-category[data-category="Other Skills"] .skill-name,
+.skill-category[data-category="Other Skills"] .skill-percent { color: #ec4899; }
+
+.skill-category[data-category="Web Development"] .skill-name,
+.skill-category[data-category="Web Development"] .skill-percent { color: #06b6d4; }
+
+.skill-category[data-category="Soft Skills"] .skill-name,
+.skill-category[data-category="Soft Skills"] .skill-percent { color: #8b5cf6; }
+
+.skill-category[data-category="Tools & Technologies"] .skill-name,
+.skill-category[data-category="Tools & Technologies"] .skill-percent { color: #f59e0b; }
 
 .skill-bar {
     width: 100%;

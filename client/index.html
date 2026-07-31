@@ -531,7 +531,7 @@
         });
         var html = '';
         Object.keys(grouped).forEach(function(cat) {
-            html += '<div class="skill-category fade-in">';
+            html += '<div class="skill-category fade-in" data-category="' + cat + '">';
             html += '<h3><i class="fas ' + (CATEGORY_ICONS[cat] || 'fa-code') + '"></i> ' + cat + '</h3>';
             grouped[cat].forEach(function(s) {
                 html += '<div class="skill-item">';
