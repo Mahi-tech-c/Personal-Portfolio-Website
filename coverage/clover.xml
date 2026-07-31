@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1785065493686" clover="3.2.0">
-  <project timestamp="1785065493686" name="All files">
-    <metrics statements="158" coveredstatements="77" conditionals="18" coveredconditionals="2" methods="18" coveredmethods="0" elements="194" coveredelements="79" complexity="0" loc="158" ncloc="158" packages="6" files="13" classes="13"/>
+<coverage generated="1785503222186" clover="3.2.0">
+  <project timestamp="1785503222186" name="All files">
+    <metrics statements="158" coveredstatements="77" conditionals="18" coveredconditionals="3" methods="18" coveredmethods="0" elements="194" coveredelements="80" complexity="0" loc="158" ncloc="158" packages="6" files="13" classes="13"/>
     <package name="src">
       <metrics statements="19" coveredstatements="17" conditionals="2" coveredconditionals="1" methods="1" coveredmethods="0"/>
-      <file name="app.js" path="C:\Users\salma\OneDrive\Desktop\Personal Portfolio Website\src\app.js">
+      <file name="app.js" path="/vercel/sandbox/primary/src/app.js">
         <metrics statements="19" coveredstatements="17" conditionals="2" coveredconditionals="1" methods="1" coveredmethods="0"/>
         <line num="1" count="2" type="stmt"/>
         <line num="2" count="2" type="stmt"/>
@@ -28,13 +28,13 @@
       </file>
     </package>
     <package name="src.config">
-      <metrics statements="14" coveredstatements="7" conditionals="4" coveredconditionals="1" methods="1" coveredmethods="0"/>
-      <file name="config.js" path="C:\Users\salma\OneDrive\Desktop\Personal Portfolio Website\src\config\config.js">
-        <metrics statements="2" coveredstatements="2" conditionals="2" coveredconditionals="1" methods="0" coveredmethods="0"/>
+      <metrics statements="14" coveredstatements="7" conditionals="4" coveredconditionals="2" methods="1" coveredmethods="0"/>
+      <file name="config.js" path="/vercel/sandbox/primary/src/config/config.js">
+        <metrics statements="2" coveredstatements="2" conditionals="2" coveredconditionals="2" methods="0" coveredmethods="0"/>
         <line num="2" count="2" type="stmt"/>
         <line num="4" count="2" type="stmt"/>
       </file>
-      <file name="db.js" path="C:\Users\salma\OneDrive\Desktop\Personal Portfolio Website\src\config\db.js">
+      <file name="db.js" path="/vercel/sandbox/primary/src/config/db.js">
         <metrics statements="12" coveredstatements="5" conditionals="2" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="1" count="2" type="stmt"/>
         <line num="2" count="2" type="stmt"/>
@@ -52,7 +52,7 @@
     </package>
     <package name="src.controllers">
       <metrics statements="85" coveredstatements="21" conditionals="10" coveredconditionals="0" methods="12" coveredmethods="0"/>
-      <file name="contactController.js" path="C:\Users\salma\OneDrive\Desktop\Personal Portfolio Website\src\controllers\contactController.js">
+      <file name="contactController.js" path="/vercel/sandbox/primary/src/controllers/contactController.js">
         <metrics statements="23" coveredstatements="7" conditionals="2" coveredconditionals="0" methods="2" coveredmethods="0"/>
         <line num="2" count="2" type="stmt"/>
         <line num="3" count="2" type="stmt"/>
@@ -78,7 +78,7 @@
         <line num="40" count="0" type="stmt"/>
         <line num="44" count="2" type="stmt"/>
       </file>
-      <file name="projectController.js" path="C:\Users\salma\OneDrive\Desktop\Personal Portfolio Website\src\controllers\projectController.js">
+      <file name="projectController.js" path="/vercel/sandbox/primary/src/controllers/projectController.js">
         <metrics statements="31" coveredstatements="7" conditionals="4" coveredconditionals="0" methods="5" coveredmethods="0"/>
         <line num="1" count="2" type="stmt"/>
         <line num="4" count="2" type="stmt"/>
@@ -112,7 +112,7 @@
         <line num="51" count="0" type="stmt"/>
         <line num="55" count="2" type="stmt"/>
       </file>
-      <file name="skillController.js" path="C:\Users\salma\OneDrive\Desktop\Personal Portfolio Website\src\controllers\skillController.js">
+      <file name="skillController.js" path="/vercel/sandbox/primary/src/controllers/skillController.js">
         <metrics statements="31" coveredstatements="7" conditionals="4" coveredconditionals="0" methods="5" coveredmethods="0"/>
         <line num="1" count="2" type="stmt"/>
         <line num="4" count="2" type="stmt"/>
@@ -149,30 +149,30 @@
     </package>
     <package name="src.models">
       <metrics statements="20" coveredstatements="17" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
-      <file name="Contact.js" path="C:\Users\salma\OneDrive\Desktop\Personal Portfolio Website\src\models\Contact.js">
+      <file name="Contact.js" path="/vercel/sandbox/primary/src/models/Contact.js">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="2" type="stmt"/>
         <line num="2" count="2" type="stmt"/>
       </file>
-      <file name="ContactMessage.js" path="C:\Users\salma\OneDrive\Desktop\Personal Portfolio Website\src\models\ContactMessage.js">
+      <file name="ContactMessage.js" path="/vercel/sandbox/primary/src/models/ContactMessage.js">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="2" type="stmt"/>
         <line num="3" count="2" type="stmt"/>
         <line num="11" count="2" type="stmt"/>
       </file>
-      <file name="Project.js" path="C:\Users\salma\OneDrive\Desktop\Personal Portfolio Website\src\models\Project.js">
+      <file name="Project.js" path="/vercel/sandbox/primary/src/models/Project.js">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="2" type="stmt"/>
         <line num="3" count="2" type="stmt"/>
         <line num="13" count="2" type="stmt"/>
       </file>
-      <file name="Skill.js" path="C:\Users\salma\OneDrive\Desktop\Personal Portfolio Website\src\models\Skill.js">
+      <file name="Skill.js" path="/vercel/sandbox/primary/src/models/Skill.js">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="2" type="stmt"/>
         <line num="3" count="2" type="stmt"/>
         <line num="8" count="2" type="stmt"/>
       </file>
-      <file name="User.js" path="C:\Users\salma\OneDrive\Desktop\Personal Portfolio Website\src\models\User.js">
+      <file name="User.js" path="/vercel/sandbox/primary/src/models/User.js">
         <metrics statements="9" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -187,7 +187,7 @@
     </package>
     <package name="src.routes">
       <metrics statements="13" coveredstatements="10" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
-      <file name="api.js" path="C:\Users\salma\OneDrive\Desktop\Personal Portfolio Website\src\routes\api.js">
+      <file name="api.js" path="/vercel/sandbox/primary/src/routes/api.js">
         <metrics statements="13" coveredstatements="10" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="2" count="2" type="stmt"/>
         <line num="3" count="2" type="stmt"/>
@@ -206,7 +206,7 @@
     </package>
     <package name="src.services">
       <metrics statements="7" coveredstatements="5" conditionals="2" coveredconditionals="0" methods="1" coveredmethods="0"/>
-      <file name="emailService.js" path="C:\Users\salma\OneDrive\Desktop\Personal Portfolio Website\src\services\emailService.js">
+      <file name="emailService.js" path="/vercel/sandbox/primary/src/services/emailService.js">
         <metrics statements="7" coveredstatements="5" conditionals="2" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="1" count="2" type="stmt"/>
         <line num="2" count="2" type="stmt"/>
