@@ -390,7 +390,7 @@
     ];
 
     const ACHIEVEMENTS_DATA = [
-        { title: 'Hackathon — IdeaSprint 24-Hours', description: 'Participated in the IdeaSprint 24-Hours Hackathon and developed the AI-Powered Emergency Traffic Control System, building a real-time dashboard for ambulance routing and traffic signal preemption.', date: '2024', icon: 'trophy' },
+        { title: 'Hackathon \u2014 IdeaSprint 24-Hours', description: 'Participated in the IdeaSprint 24-Hours Hackathon and developed the AI-Powered Emergency Traffic Control System, building a real-time dashboard for ambulance routing and traffic signal preemption.', date: '2024', icon: 'trophy' },
         { title: 'Ideathon', description: 'Participated and presented innovative ideas at an Ideathon competition, showcasing problem-solving and creative thinking skills.', date: '2024', icon: 'lightbulb' }
     ];
 
@@ -418,9 +418,9 @@
         const toggle = document.getElementById('theme-toggle');
         if (toggle) {
             toggle.querySelector('i').className = saved === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
-            toggle.addEventListener('click', () => {
-                const current = document.documentElement.getAttribute('data-theme');
-                const next = current === 'dark' ? 'light' : 'dark';
+            toggle.addEventListener('click', function() {
+                var current = document.documentElement.getAttribute('data-theme');
+                var next = current === 'dark' ? 'light' : 'dark';
                 document.documentElement.setAttribute('data-theme', next);
                 localStorage.setItem('theme', next);
                 toggle.querySelector('i').className = next === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
@@ -430,28 +430,28 @@
 
     // ============ NAVIGATION ============
     (function initNav() {
-        const hamburger = document.getElementById('hamburger');
-        const navMenu = document.getElementById('nav-menu');
+        var hamburger = document.getElementById('hamburger');
+        var navMenu = document.getElementById('nav-menu');
         if (hamburger && navMenu) {
-            hamburger.addEventListener('click', () => {
+            hamburger.addEventListener('click', function() {
                 hamburger.classList.toggle('active');
                 navMenu.classList.toggle('active');
             });
-            navMenu.querySelectorAll('.nav-link').forEach(link => {
-                link.addEventListener('click', () => {
+            navMenu.querySelectorAll('.nav-link').forEach(function(link) {
+                link.addEventListener('click', function() {
                     hamburger.classList.remove('active');
                     navMenu.classList.remove('active');
                 });
             });
         }
         // Scroll spy
-        const sections = document.querySelectorAll('section[id]');
-        const navLinks = document.querySelectorAll('.nav-link');
-        window.addEventListener('scroll', () => {
-            const scrollY = window.scrollY + 100;
-            sections.forEach(s => {
+        var sections = document.querySelectorAll('section[id]');
+        var navLinks = document.querySelectorAll('.nav-link');
+        window.addEventListener('scroll', function() {
+            var scrollY = window.scrollY + 100;
+            sections.forEach(function(s) {
                 if (scrollY >= s.offsetTop && scrollY < s.offsetTop + s.offsetHeight) {
-                    navLinks.forEach(l => {
+                    navLinks.forEach(function(l) {
                         l.classList.remove('active');
                         if (l.getAttribute('href') === '#' + s.id) l.classList.add('active');
                     });
@@ -461,14 +461,14 @@
             document.getElementById('back-to-top').classList.toggle('visible', window.scrollY > 300);
         });
         // Back to top
-        document.getElementById('back-to-top').addEventListener('click', () => {
+        document.getElementById('back-to-top').addEventListener('click', function() {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
         // Smooth scroll
-        document.querySelectorAll('a[href^="#"]').forEach(a => {
-            a.addEventListener('click', e => {
+        document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+            a.addEventListener('click', function(e) {
                 e.preventDefault();
-                const t = document.querySelector(a.getAttribute('href'));
+                var t = document.querySelector(a.getAttribute('href'));
                 if (t) window.scrollTo({ top: t.offsetTop - 70, behavior: 'smooth' });
             });
         });
@@ -476,14 +476,14 @@
 
     // ============ TYPING ANIMATION ============
     (function initTyping() {
-        const el = document.getElementById('typing-text');
+        var el = document.getElementById('typing-text');
         if (!el || !TYPING_TITLES.length) return;
-        let ti = 0, ci = 0, deleting = false;
+        var ti = 0, ci = 0, deleting = false;
         function type() {
-            const title = TYPING_TITLES[ti];
+            var title = TYPING_TITLES[ti];
             if (deleting) { el.textContent = title.substring(0, ci - 1); ci--; }
             else { el.textContent = title.substring(0, ci + 1); ci++; }
-            let speed = deleting ? 50 : 100;
+            var speed = deleting ? 50 : 100;
             if (!deleting && ci === title.length) { speed = 2000; deleting = true; }
             else if (deleting && ci === 0) { deleting = false; ti = (ti + 1) % TYPING_TITLES.length; speed = 500; }
             setTimeout(type, speed);
@@ -493,16 +493,16 @@
 
     // ============ COUNTER ANIMATION ============
     (function initCounters() {
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
+        var observer = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
                 if (entry.isIntersecting) {
-                    const el = entry.target;
-                    const target = parseFloat(el.dataset.target);
-                    const isDecimal = el.dataset.decimal === 'true';
-                    const start = performance.now();
+                    var el = entry.target;
+                    var target = parseFloat(el.dataset.target);
+                    var isDecimal = el.dataset.decimal === 'true';
+                    var start = performance.now();
                     function update(now) {
-                        const progress = Math.min((now - start) / 2000, 1);
-                        const eased = 1 - Math.pow(1 - progress, 3);
+                        var progress = Math.min((now - start) / 2000, 1);
+                        var eased = 1 - Math.pow(1 - progress, 3);
                         el.textContent = isDecimal ? (target * eased).toFixed(2) : Math.floor(target * eased);
                         if (progress < 1) requestAnimationFrame(update);
                         else el.textContent = isDecimal ? target.toFixed(2) : target;
@@ -512,105 +512,96 @@
                 }
             });
         }, { threshold: 0.5 });
-        document.querySelectorAll('.stat-number').forEach(c => observer.observe(c));
-    })();
-
-    // ============ SCROLL REVEAL ============
-    (function initReveal() {
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-        document.querySelectorAll('.fade-in, .stat-item, .project-card, .certificate-card, .achievement-card, .skill-category, .timeline-card').forEach(el => {
-            el.classList.add('fade-in');
-            observer.observe(el);
-        });
-        // Observe skill bars
-        const skillObserver = new IntersectionObserver(entries => {
-            entries.forEach(e => {
-                if (e.isIntersecting) {
-                    e.target.querySelectorAll('.skill-progress').forEach(bar => {
-                        setTimeout(() => { bar.style.width = bar.dataset.width + '%'; }, 200);
-                    });
-                }
-            });
-        }, { threshold: 0.2 });
-        document.querySelectorAll('.skill-category').forEach(el => skillObserver.observe(el));
+        document.querySelectorAll('.stat-number').forEach(function(c) { observer.observe(c); });
     })();
 
     // ============ RENDER SKILLS ============
     (function renderSkills() {
-        const container = document.getElementById('skills-container');
-        const grouped = {};
-        SKILLS_DATA.forEach(s => {
+        var container = document.getElementById('skills-container');
+        if (!container) return;
+        var grouped = {};
+        SKILLS_DATA.forEach(function(s) {
             if (!grouped[s.category]) grouped[s.category] = [];
             grouped[s.category].push(s);
         });
-        container.innerHTML = Object.keys(grouped).map(cat => `
-            <div class="skill-category fade-in">
-                <h3><i class="fas ${CATEGORY_ICONS[cat] || 'fa-code'}"></i> ${cat}</h3>
-                ${grouped[cat].map(s => `
-                    <div class="skill-item">
-                        <div class="skill-header">
-                            <span class="skill-name">${s.name}</span>
-                            <span class="skill-percent">${s.proficiency}%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" data-width="${s.proficiency}"></div>
-                        </div>
-                    </div>
-                `).join('')}
-            </div>
-        `).join('');
+        var html = '';
+        Object.keys(grouped).forEach(function(cat) {
+            html += '<div class="skill-category fade-in">';
+            html += '<h3><i class="fas ' + (CATEGORY_ICONS[cat] || 'fa-code') + '"></i> ' + cat + '</h3>';
+            grouped[cat].forEach(function(s) {
+                html += '<div class="skill-item">';
+                html += '<div class="skill-header">';
+                html += '<span class="skill-name">' + s.name + '</span>';
+                html += '<span class="skill-percent">' + s.proficiency + '%</span>';
+                html += '</div>';
+                html += '<div class="skill-bar">';
+                html += '<div class="skill-progress" data-width="' + s.proficiency + '"></div>';
+                html += '</div></div>';
+            });
+            html += '</div>';
+        });
+        container.innerHTML = html;
     })();
 
     // ============ RENDER PROJECTS ============
-    let currentFilter = 'all';
+    var currentFilter = 'all';
     function renderProjects(filter, search) {
-        const grid = document.getElementById('projects-grid');
-        let projects = PROJECTS_DATA;
-        if (filter && filter !== 'all') projects = projects.filter(p => p.category === filter);
+        var grid = document.getElementById('projects-grid');
+        if (!grid) return;
+        var projects = PROJECTS_DATA.slice();
+        if (filter && filter !== 'all') projects = projects.filter(function(p) { return p.category === filter; });
         if (search) {
-            const q = search.toLowerCase();
-            projects = projects.filter(p => p.title.toLowerCase().includes(q) || p.description.toLowerCase().includes(q) || p.technologies.some(t => t.toLowerCase().includes(q)));
+            var q = search.toLowerCase();
+            projects = projects.filter(function(p) {
+                return p.title.toLowerCase().indexOf(q) !== -1 ||
+                       p.description.toLowerCase().indexOf(q) !== -1 ||
+                       p.technologies.some(function(t) { return t.toLowerCase().indexOf(q) !== -1; });
+            });
         }
         if (!projects.length) {
             grid.innerHTML = '<div class="empty-state"><i class="fas fa-project-diagram"></i><p>No projects found.</p></div>';
             return;
         }
-        grid.innerHTML = projects.map((p, i) => `
-            <div class="project-card fade-in visible" data-index="${i}" data-filter="${p.category}">
-                <div class="project-image">
-                    <i class="fas ${CATEGORY_ICONS[p.category] || 'fa-folder'}"></i>
-                    ${p.featured ? '<span class="project-badge">Featured</span>' : ''}
-                </div>
-                <div class="project-content">
-                    <h3>${p.title}</h3>
-                    <p>${p.shortDescription || p.description}</p>
-                    <div class="project-tech">${p.technologies.slice(0, 4).map(t => `<span class="tech-tag">${t}</span>`).join('')}</div>
-                    <div class="project-links">
-                        ${p.githubUrl ? `<a href="${p.githubUrl}" class="project-link" target="_blank"><i class="fab fa-github"></i> Code</a>` : ''}
-                        ${p.liveUrl ? `<a href="${p.liveUrl}" class="project-link" target="_blank"><i class="fas fa-external-link-alt"></i> Live</a>` : ''}
-                    </div>
-                </div>
-            </div>
-        `).join('');
+        var html = '';
+        projects.forEach(function(p, i) {
+            var origIndex = PROJECTS_DATA.indexOf(p);
+            html += '<div class="project-card fade-in visible" data-index="' + origIndex + '" data-filter="' + p.category + '">';
+            html += '<div class="project-image">';
+            html += '<i class="fas ' + (CATEGORY_ICONS[p.category] || 'fa-folder') + '"></i>';
+            if (p.featured) html += '<span class="project-badge">Featured</span>';
+            html += '</div>';
+            html += '<div class="project-content">';
+            html += '<h3>' + p.title + '</h3>';
+            html += '<p>' + (p.shortDescription || p.description) + '</p>';
+            html += '<div class="project-tech">';
+            p.technologies.slice(0, 4).forEach(function(t) {
+                html += '<span class="tech-tag">' + t + '</span>';
+            });
+            html += '</div>';
+            html += '<div class="project-links">';
+            if (p.githubUrl) html += '<a href="' + p.githubUrl + '" class="project-link" target="_blank"><i class="fab fa-github"></i> Code</a>';
+            if (p.liveUrl) html += '<a href="' + p.liveUrl + '" class="project-link" target="_blank"><i class="fas fa-external-link-alt"></i> Live</a>';
+            html += '</div></div></div>';
+        });
+        grid.innerHTML = html;
         // Modal click
-        grid.querySelectorAll('.project-card').forEach(card => {
-            card.addEventListener('click', e => {
+        grid.querySelectorAll('.project-card').forEach(function(card) {
+            card.addEventListener('click', function(e) {
                 if (e.target.closest('a')) return;
-                const idx = parseInt(card.dataset.index);
-                const p = PROJECTS_DATA[idx];
-                const modal = document.getElementById('project-modal');
-                document.getElementById('modal-body').innerHTML = `
-                    <h2>${p.title}</h2>
-                    <p class="modal-category"><i class="fas ${CATEGORY_ICONS[p.category]}"></i> ${p.category}</p>
-                    <p class="modal-description">${p.description}</p>
-                    <div class="modal-tech">${p.technologies.map(t => `<span class="tech-tag">${t}</span>`).join('')}</div>
-                    <div class="modal-links">
-                        ${p.githubUrl ? `<a href="${p.githubUrl}" class="btn btn-secondary" target="_blank"><i class="fab fa-github"></i> View Code</a>` : ''}
-                        ${p.liveUrl ? `<a href="${p.liveUrl}" class="btn btn-primary" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>` : ''}
-                    </div>
-                `;
+                var idx = parseInt(card.dataset.index);
+                var p = PROJECTS_DATA[idx];
+                var modal = document.getElementById('project-modal');
+                var modalHtml = '<h2>' + p.title + '</h2>';
+                modalHtml += '<p class="modal-category"><i class="fas ' + (CATEGORY_ICONS[p.category] || '') + '"></i> ' + p.category + '</p>';
+                modalHtml += '<p class="modal-description">' + p.description + '</p>';
+                modalHtml += '<div class="modal-tech">';
+                p.technologies.forEach(function(t) { modalHtml += '<span class="tech-tag">' + t + '</span>'; });
+                modalHtml += '</div>';
+                modalHtml += '<div class="modal-links">';
+                if (p.githubUrl) modalHtml += '<a href="' + p.githubUrl + '" class="btn btn-secondary" target="_blank"><i class="fab fa-github"></i> View Code</a>';
+                if (p.liveUrl) modalHtml += '<a href="' + p.liveUrl + '" class="btn btn-primary" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>';
+                modalHtml += '</div>';
+                document.getElementById('modal-body').innerHTML = modalHtml;
                 modal.classList.add('active');
             });
         });
@@ -618,75 +609,121 @@
     renderProjects('all', '');
 
     // Filters
-    document.getElementById('project-filters').addEventListener('click', e => {
+    document.getElementById('project-filters').addEventListener('click', function(e) {
         if (e.target.classList.contains('filter-btn')) {
-            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            document.querySelectorAll('.filter-btn').forEach(function(b) { b.classList.remove('active'); });
             e.target.classList.add('active');
             currentFilter = e.target.dataset.filter;
             renderProjects(currentFilter, document.getElementById('project-search').value);
         }
     });
-    document.getElementById('project-search').addEventListener('input', e => {
+    document.getElementById('project-search').addEventListener('input', function(e) {
         renderProjects(currentFilter, e.target.value);
     });
 
     // Modal close
-    document.querySelector('.modal-close').addEventListener('click', () => {
+    document.querySelector('.modal-close').addEventListener('click', function() {
         document.getElementById('project-modal').classList.remove('active');
     });
-    document.getElementById('project-modal').addEventListener('click', e => {
+    document.getElementById('project-modal').addEventListener('click', function(e) {
         if (e.target.id === 'project-modal') e.target.classList.remove('active');
     });
-    document.addEventListener('keydown', e => {
+    document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape') document.getElementById('project-modal').classList.remove('active');
     });
 
     // ============ RENDER CERTIFICATES ============
     (function renderCerts() {
-        document.getElementById('certificates-grid').innerHTML = CERTIFICATES_DATA.map(c => `
-            <div class="certificate-card fade-in">
-                <div class="cert-icon"><i class="fas fa-certificate"></i></div>
-                <h3>${c.title}</h3>
-                <p class="cert-issuer">${c.issuer}</p>
-                <p class="cert-date"><i class="fas fa-calendar-alt"></i> ${c.date}</p>
-                <p>${c.description}</p>
-            </div>
-        `).join('');
+        var grid = document.getElementById('certificates-grid');
+        if (!grid) return;
+        var html = '';
+        CERTIFICATES_DATA.forEach(function(c) {
+            html += '<div class="certificate-card fade-in">';
+            html += '<div class="cert-icon"><i class="fas fa-certificate"></i></div>';
+            html += '<h3>' + c.title + '</h3>';
+            html += '<p class="cert-issuer">' + c.issuer + '</p>';
+            html += '<p class="cert-date"><i class="fas fa-calendar-alt"></i> ' + c.date + '</p>';
+            html += '<p>' + c.description + '</p>';
+            html += '</div>';
+        });
+        grid.innerHTML = html;
     })();
 
     // ============ RENDER ACHIEVEMENTS ============
     (function renderAchievements() {
-        document.getElementById('achievements-grid').innerHTML = ACHIEVEMENTS_DATA.map(a => `
-            <div class="achievement-card fade-in">
-                <div class="achievement-icon"><i class="fas ${ACHIEVEMENT_ICONS[a.icon] || 'fa-trophy'}"></i></div>
-                <h3>${a.title}</h3>
-                ${a.date ? `<p class="achievement-date">${a.date}</p>` : ''}
-                <p>${a.description}</p>
-            </div>
-        `).join('');
+        var grid = document.getElementById('achievements-grid');
+        if (!grid) return;
+        var html = '';
+        ACHIEVEMENTS_DATA.forEach(function(a) {
+            var icon = ACHIEVEMENT_ICONS[a.icon] || 'fa-trophy';
+            html += '<div class="achievement-card fade-in">';
+            html += '<div class="achievement-icon"><i class="fas ' + icon + '"></i></div>';
+            html += '<h3>' + a.title + '</h3>';
+            if (a.date) html += '<p class="achievement-date">' + a.date + '</p>';
+            html += '<p>' + a.description + '</p>';
+            html += '</div>';
+        });
+        grid.innerHTML = html;
+    })();
+
+    // ============ SCROLL REVEAL & SKILL BARS ============
+    // MUST run AFTER all render functions so dynamically created elements are observed
+    (function initReveal() {
+        var observer = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+        // Observe ALL elements that need fade-in
+        var selectors = '.fade-in, .stat-item, .project-card, .certificate-card, .achievement-card, .skill-category, .timeline-card';
+        document.querySelectorAll(selectors).forEach(function(el) {
+            if (!el.classList.contains('fade-in')) el.classList.add('fade-in');
+            observer.observe(el);
+        });
+
+        // Skill bar animation
+        var skillObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    entry.target.querySelectorAll('.skill-progress').forEach(function(bar) {
+                        var width = bar.getAttribute('data-width');
+                        if (width) {
+                            setTimeout(function() { bar.style.width = width + '%'; }, 300);
+                        }
+                    });
+                }
+            });
+        }, { threshold: 0.2 });
+
+        document.querySelectorAll('.skill-category').forEach(function(el) {
+            skillObserver.observe(el);
+        });
     })();
 
     // ============ CONTACT FORM ============
-    document.getElementById('contact-form').addEventListener('submit', e => {
+    document.getElementById('contact-form').addEventListener('submit', function(e) {
         e.preventDefault();
-        const form = e.target;
-        const msg = document.getElementById('form-message');
-        const btnText = form.querySelector('.btn-text');
-        const btnLoader = form.querySelector('.btn-loader');
+        var form = e.target;
+        var msg = document.getElementById('form-message');
+        var btnText = form.querySelector('.btn-text');
+        var btnLoader = form.querySelector('.btn-loader');
 
         // Clear errors
-        form.querySelectorAll('.error-message').forEach(el => el.textContent = '');
+        form.querySelectorAll('.error-message').forEach(function(el) { el.textContent = ''; });
         msg.className = 'form-message';
         msg.style.display = 'none';
 
-        const data = {
+        var data = {
             name: form.name.value.trim(),
             email: form.email.value.trim(),
             subject: form.subject.value.trim(),
             message: form.message.value.trim()
         };
 
-        let err = false;
+        var err = false;
         if (data.name.length < 2) { document.getElementById('name-error').textContent = 'Name must be at least 2 characters'; err = true; }
         if (!/^\S+@\S+\.\S+$/.test(data.email)) { document.getElementById('email-error').textContent = 'Please enter a valid email'; err = true; }
         if (data.subject.length < 2) { document.getElementById('subject-error').textContent = 'Subject must be at least 2 characters'; err = true; }
@@ -696,7 +733,7 @@
         btnText.style.display = 'none';
         btnLoader.style.display = 'inline-flex';
 
-        setTimeout(() => {
+        setTimeout(function() {
             msg.textContent = 'Thank you! Your message has been received. I will get back to you soon.';
             msg.className = 'form-message success';
             msg.style.display = 'block';
@@ -710,11 +747,13 @@
     document.getElementById('current-year').textContent = new Date().getFullYear();
 
     // ============ HIDE LOADER ============
-    window.addEventListener('load', () => {
-        setTimeout(() => {
-            const loader = document.getElementById('loader');
-            loader.classList.add('hidden');
-            setTimeout(() => loader.remove(), 300);
+    window.addEventListener('load', function() {
+        setTimeout(function() {
+            var loader = document.getElementById('loader');
+            if (loader) {
+                loader.classList.add('hidden');
+                setTimeout(function() { loader.remove(); }, 300);
+            }
         }, 500);
     });
     </script>
