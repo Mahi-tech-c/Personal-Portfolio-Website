@@ -1,5 +1,7 @@
 # Salma Tabassum - Personal Portfolio
 
+🌐 **Live Site:** [https://personal-portfolio-website-six-omega.vercel.app](https://personal-portfolio-website-six-omega.vercel.app)
+
 A modern, responsive, production-ready full-stack personal portfolio website built with **MERN Stack** (MongoDB, Express, Vanilla JS, Node.js).
 
 ## 🌟 Features
