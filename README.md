@@ -1,176 +1,302 @@
-# Personal Portfolio Website
+# Salma Tabassum - Personal Portfolio
 
-A modern, premium‑looking personal portfolio built with **Node.js**, **Express**, **MongoDB** and a beautiful static front‑end. It includes an **admin UI** for managing projects, skills, and contact messages, along with **Docker** support for production and testing.
+🌐 **Live Site:** [https://personal-portfolio-website-six-omega.vercel.app](https://personal-portfolio-website-six-omega.vercel.app)
 
----
+A modern, responsive, production-ready full-stack personal portfolio website built with **MERN Stack** (MongoDB, Express, Vanilla JS, Node.js).
 
-## Table of Contents
-- [Features](#features)
-- [Tech Stack](#tech-stack)
-- [Prerequisites](#prerequisites)
-- [Local Development](#local-development)
-- [Production Deployment](#production-deployment)
-- [Docker Compose Helper for Tests](#docker-compose-helper-for-tests)
-- [Parallel Test Execution](#parallel-test-execution)
-- [CI/CD (GitHub Actions)](#cicd-github-actions)
-- [Custom Domain & TLS (Caddy)](#custom-domain--tls-caddy)
-- [Secrets Management](#secrets-management)
-- [Project Structure](#project-structure)
-- [License](#license)
+## 🌟 Features
 
----
+### Frontend
+- ✨ Modern minimal UI with glassmorphism design
+- 🌓 Dark/Light mode toggle
+- 📱 Fully responsive (mobile-first design)
+- 🎨 Smooth animations and transitions
+- ⚡ Fast loading with lazy loading
+- 🎯 SEO optimized
 
-## Features
-- **Vibrant gradient UI** (`linear-gradient(135deg, #4FACFE 0%, #A855F7 50%, #FF4D9D 100%)`) with glass‑morphism cards and micro‑animations.
-- **Admin dashboard** (login via JWT) to CRUD projects, skills and view contact messages.
-- **REST API** for public portfolio data (`/api/projects`, `/api/skills`, `/api/portfolio`).
-- **Contact form** storing submissions in MongoDB and sending email notifications via Nodemailer.
-- **Dockerized** production and test environments, **parallel Jest test execution**, and **resource‑hardened** containers.
-- **CI/CD** workflow that runs tests, builds the Docker image, and can deploy to Vercel.
+### Backend
+- 🔐 JWT Authentication
+- 📊 RESTful API architecture
+- 🗄️ MongoDB database with Mongoose
+- ✉️ Email notifications (Nodemailer)
+- 🛡️ Security (Helmet, Rate limiting, Input sanitization)
+- ✅ Input validation
+- 📝 Error handling middleware
 
----
+### Content Sections
+1. **Home** - Hero section with typing animation
+2. **About** - Biography, education, experience timeline
+3. **Skills** - Categorized skills with progress bars
+4. **Projects** - Dynamic project showcase with filtering & pagination
+5. **Certificates** - Professional certifications
+6. **Achievements** - Awards and recognitions
+7. **Contact** - Contact form with email integration
 
-## Tech Stack
-- **Backend**: Node.js 20, Express 5, Mongoose, JWT, Helmet, CORS
-- **Database**: MongoDB 7 (Docker)
-- **Testing**: Jest, Supertest
-- **Containerisation**: Docker & Docker‑Compose
-- **Reverse Proxy (optional)**: Caddy 2 (automatic TLS via Let's Encrypt)
-- **Styling**: Vanilla CSS, Google Font *Inter*
+## 🛠️ Tech Stack
 
----
+### Frontend
+- HTML5
+- CSS3 (Custom Properties, Flexbox, Grid)
+- Vanilla JavaScript (ES6+)
+- Font Awesome Icons
+- Google Fonts (Poppins)
 
-## Prerequisites
-- Docker Engine (or Docker Desktop) ≥ 20.10
-- Node.js ≥ 20 (for local dev only)
-- (Optional) Vercel CLI if you want to deploy manually
-- A Gmail account and **App Password** for email notifications (or configure another SMTP)
+### Backend
+- Node.js
+- Express.js
+- MongoDB
+- Mongoose ODM
+- JWT for authentication
+- Nodemailer for emails
 
----
+## 📋 Prerequisites
 
-## Local Development
+- Node.js (v14+)
+- MongoDB Atlas account (free)
+- Gmail account (for email notifications)
+- Git
+
+## 🚀 Quick Start
+
+### 1. Clone Repository
+
 ```bash
-# Clone the repo
 git clone https://github.com/Mahi-tech-c/Personal-Portfolio-Website.git
 cd Personal-Portfolio-Website
+```
 
-# Install dependencies
-npm ci
+### 2. Backend Setup
 
-# Create .env (copy from .env.example) and set your values
-cp .env.example .env
-# Edit .env – set MONGODB_URI=mongodb://localhost:27017/portfolio
+```bash
+cd server
+npm install
+```
 
-# Run locally (development mode)
+### 3. Configure Environment Variables
+
+Create `server/.env`:
+
+```env
+NODE_ENV=development
+PORT=5000
+
+# MongoDB Atlas Connection String
+MONGO_URI=mongodb+srv://username:password@cluster.mongodb.net/portfolio?retryWrites=true&w=majority
+
+# JWT Configuration
+JWT_SECRET=your_super_secret_jwt_key
+JWT_EXPIRE=7d
+
+# Email Configuration (Gmail)
+EMAIL_SERVICE=gmail
+EMAIL_USER=your-email@gmail.com
+EMAIL_PASS=your_gmail_app_password
+EMAIL_FROM=your-email@gmail.com
+
+# Frontend URL
+CLIENT_URL=http://127.0.0.1:5500
+
+# Admin Credentials
+ADMIN_EMAIL=admin@portfolio.com
+ADMIN_PASSWORD=Admin@123456
+```
+
+### 4. Seed Database
+
+```bash
+npm run seed
+```
+
+### 5. Start Backend Server
+
+```bash
 npm run dev
 ```
-Visit <http://localhost:3000> – you should see the portfolio. Admin UI is at <http://localhost:3000/admin.html> (login with the credentials you set in `.env`).
 
----
+Server runs on: http://localhost:5000
 
-## Production Deployment
+### 6. Open Frontend
+
+The frontend is served automatically at http://localhost:3000
+
+Or open `client/index.html` with Live Server.
+
+## 📚 API Endpoints
+
+### Public Endpoints
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/api/profile` | Get profile information |
+| GET | `/api/projects` | Get all projects (with pagination) |
+| GET | `/api/projects/:id` | Get single project |
+| GET | `/api/skills` | Get all skills (grouped by category) |
+| GET | `/api/certificates` | Get all certificates |
+| GET | `/api/achievements` | Get all achievements |
+| POST | `/api/contact` | Submit contact form |
+
+### Protected Endpoints (Requires JWT Token)
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| POST | `/api/auth/login` | Login and get JWT token |
+| PUT | `/api/profile` | Update profile |
+| POST | `/api/projects` | Create project |
+| PUT | `/api/projects/:id` | Update project |
+| DELETE | `/api/projects/:id` | Delete project |
+| POST | `/api/skills` | Create skill |
+| PUT | `/api/skills/:id` | Update skill |
+| DELETE | `/api/skills/:id` | Delete skill |
+| POST | `/api/certificates` | Create certificate |
+| PUT | `/api/certificates/:id` | Update certificate |
+| DELETE | `/api/certificates/:id` | Delete certificate |
+| POST | `/api/achievements` | Create achievement |
+| PUT | `/api/achievements/:id` | Update achievement |
+| DELETE | `/api/achievements/:id` | Delete achievement |
+| GET | `/api/messages` | Get contact messages |
+| DELETE | `/api/messages/:id` | Delete message |
+
+## 🎨 Customization
+
+### Update Your Information
+- **Profile Data** - Edit in `server/utils/seed.js`
+- **Colors** - Edit CSS variables in `client/css/style.css` `:root`
+- **Typing Titles** - Edit in `server/utils/seed.js` (typingTitles field)
+- **Projects** - Add/edit in `server/utils/seed.js`
+- **Skills** - Add/edit in `server/utils/seed.js`
+
+### Update API URL
+In `client/js/config.js`:
+```javascript
+const CONFIG = {
+    API_BASE_URL: 'http://localhost:5000/api' // Development
+    // API_BASE_URL: 'https://your-backend-url.com/api' // Production
+};
+```
+
+## 🚀 Deployment
+
+### Backend Deployment (Railway or Render)
+
+**Railway:**
+1. Go to https://railway.app
+2. New Project → Deploy from GitHub
+3. Select this repository
+4. Add environment variables from `.env`
+5. Deploy!
+
+**Render:**
+1. Go to https://render.com
+2. New Web Service → Connect GitHub
+3. Select repository
+4. Add environment variables
+5. Deploy!
+
+### Frontend Deployment (Vercel or Netlify)
+
+**Vercel:**
 ```bash
-# From the project root
-docker compose -f docker-compose.prod.yml up --build -d
+npm i -g vercel
+cd client
+vercel
 ```
-### What the production compose does
-- **Secrets** – reads Mongo URI, JWT secret, admin email/password from files under `secrets/` (replace the placeholders in `secrets/placeholder.txt`).
-- **Resource limits** – caps the app at 0.5 CPU and 512 MiB.
-- **Read‑only filesystem** – container runs as non‑root `node` user.
-- **Log rotation** – `json-file` driver with max‑size 10 MiB, max‑files 3.
-- **Optional Caddy reverse‑proxy** – enable by adding `ENABLE_PROXY=true` to your `.env`; Caddy will obtain TLS certificates automatically for the domain you configure in `caddy/Caddyfile`.
 
-### Secrets
-Create real secret files (replace the placeholder values):
-```bash
-mkdir -p secrets
-echo "mongodb://mongo:27017/portfolio" > secrets/mongodb_uri.txt
-echo "YOUR_JWT_SECRET" > secrets/jwt_secret.txt
-echo "YOUR_ADMIN_EMAIL" > secrets/admin_email.txt
-echo "YOUR_ADMIN_PASSWORD" > secrets/admin_password.txt
+**Netlify:**
+1. Go to https://app.netlify.com
+2. Drag and drop `client` folder
+
+## 🔒 Security Features
+
+- ✅ Passwords hashed with bcryptjs
+- ✅ JWT authentication tokens
+- ✅ Rate limiting on API routes
+- ✅ Input validation and sanitization
+- ✅ Helmet.js for security headers
+- ✅ CORS configured
+- ✅ MongoDB injection prevention
+- ✅ Environment variables for secrets
+
+## 📁 Project Structure
+
 ```
-Do **NOT** commit these files.
+├── client/                # Frontend
+│   ├── css/
+│   │   ├── style.css
+│   │   └── responsive.css
+│   ├── js/
+│   │   ├── config.js
+│   │   ├── api.js
+│   │   ├── utils.js
+│   │   ├── theme.js
+│   │   ├── navigation.js
+│   │   ├── animations.js
+│   │   ├── sections.js
+│   │   └── app.js
+│   └── index.html
+├── server/                # Backend
+│   ├── config/
+│   │   └── database.js
+│   ├── controllers/
+│   │   ├── authController.js
+│   │   ├── profileController.js
+│   │   ├── projectController.js
+│   │   ├── skillController.js
+│   │   ├── certificateController.js
+│   │   ├── achievementController.js
+│   │   └── contactController.js
+│   ├── middleware/
+│   │   ├── auth.js
+│   │   ├── errorHandler.js
+│   │   └── rateLimiter.js
+│   ├── models/
+│   │   ├── User.js
+│   │   ├── Profile.js
+│   │   ├── Project.js
+│   │   ├── Skill.js
+│   │   ├── Certificate.js
+│   │   ├── Achievement.js
+│   │   └── Message.js
+│   ├── routes/
+│   │   ├── authRoutes.js
+│   │   ├── profileRoutes.js
+│   │   ├── projectRoutes.js
+│   │   ├── skillRoutes.js
+│   │   ├── certificateRoutes.js
+│   │   ├── achievementRoutes.js
+│   │   └── contactRoutes.js
+│   ├── utils/
+│   │   ├── email.js
+│   │   └── seed.js
+│   ├── validators/
+│   │   └── validators.js
+│   ├── uploads/
+│   ├── app.js
+│   ├── server.js
+│   ├── package.json
+│   └── .env.example
+├── .gitignore
+├── README.md
+└── SETUP.md
+```
+
+## 📄 License
+
+MIT License - Free to use and modify
+
+## 👤 Author
+
+**Salma Tabassum**
+- GitHub: [@Mahi-tech-c](https://github.com/Mahi-tech-c)
+- LinkedIn: [Salma Tabassum](https://www.linkedin.com/in/salma-tabassum-31b165320)
+- Email: salma3962024@gmail.com
+
+## 🙏 Acknowledgments
+
+- Font Awesome for icons
+- Google Fonts for typography
+- MongoDB Atlas for database hosting
+- All open-source libraries used
 
 ---
 
-## Docker Compose Helper for Tests
-The file `docker-compose.test.yml` runs a single container that executes `npm test` against a temporary MongoDB instance.
-```bash
-docker compose -f docker-compose.test.yml up --build --abort-on-container-exit
-```
----
-
-## Parallel Test Execution
-`docker-compose.parallel-test.yml` launches three test runners simultaneously, each with its own isolated test database and writing JUnit XML reports to `test-reports/`.
-```bash
-docker compose -f docker-compose.parallel-test.yml up --build --abort-on-container-exit
-# Reports are available in ./test-reports/
-```
-You can change the number of runners by editing the file or by setting the environment variable `PARALLEL_WORKERS` (default = 3).
-<!-- Trigger CI after adding secrets -->
-
----
-
-## CI/CD (GitHub Actions)
-The workflow `.github/workflows/ci.yml` automatically:
-1. Checks out the repo.
-2. Sets up Node 20.
-3. Installs dependencies.
-4. Runs **parallel tests** with coverage.
-5. Uploads the coverage report and JUnit test results as artifacts.
-6. Builds the Docker image and pushes it to Docker Hub (optional – configure `DOCKER_USERNAME`/`DOCKER_PASSWORD` secrets).
-7. Deploys to Vercel (optional – configure `VERCEL_TOKEN` and `VERCEL_ORG_ID`/`VERCEL_PROJECT_ID`).
-
-See the workflow file for details.
-
----
-
-## Custom Domain & TLS (Caddy)
-Edit `caddy/Caddyfile` with your real domain and email:
-```caddy
-myportfolio.com {
-    tls youremail@domain.com
-    reverse_proxy app:3000
-}
-```
-Set `ENABLE_PROXY=true` in `.env` and redeploy the production stack. Caddy will automatically obtain and renew certificates from Let's Encrypt.
-
----
-
-## Secrets Management
-- **Docker secrets** are used in production (`docker-compose.prod.yml`).
-- For local development you can still use plain env vars in `.env`.
-- Never commit secret files; add `secrets/` to `.gitignore` (already present).
-
----
-
-## Project Structure
-```
-├─ public/                # Static assets (HTML, CSS, JS)
-│   ├─ admin.html
-│   ├─ css/
-│   └─ js/
-├─ src/                  # Server‑side source
-│   ├─ app.js            # Express app
-│   ├─ server.js         # HTTP server entry point
-│   ├─ config/           # DB & other config
-│   ├─ controllers/      # MVC controllers
-│   ├─ middleware/       # auth, error handling
-│   └─ models/           # Mongoose schemas
-├─ tests/                # Jest/Supertest integration tests
-├─ Dockerfile            # Multi‑stage, non‑root production image
-├─ docker-compose.yml    # Development compose (app + mongo)
-├─ docker-compose.prod.yml
-├─ docker-compose.test.yml
-├─ docker-compose.parallel-test.yml
-├─ caddy/                # Optional reverse‑proxy config
-│   └─ Caddyfile
-├─ .github/workflows/ci.yml
-├─ .env.example
-├─ jest.config.js
-└─ README.md
-```
----
-
-## License
-MIT – feel free to fork, modify, and share!
+Built with ❤️ by Salma Tabassum
